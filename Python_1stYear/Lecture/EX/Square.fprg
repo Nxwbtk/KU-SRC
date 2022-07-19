@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-19 09:25:26 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDg6NTc6MTQgQU07MjkxNA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDk6MjU6MjYgQU07MTszMDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Square, Rai, Acre" type="Real" array="False" size=""/>
+            <output expression="&quot;Area (Square of Meters):&quot;" newline="True"/>
+            <input variable="Square"/>
+            <assign variable="Rai" expression="Square/1600"/>
+            <output expression="Square &amp; &quot; Square of Meters = &quot; &amp; Rai &amp; &quot; Rai&quot;" newline="True"/>
+            <assign variable="Acre" expression="Rai/2.471"/>
+            <output expression="Square &amp; &quot; Square of Meters = &quot; &amp; Acre &amp; &quot; Acre&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

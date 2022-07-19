@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-25 11:59:27 PM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjU7MTE6NTQ6NDMgUE07MjkxOQ=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjU7MTE6NTk6MjcgUE07MTszMDM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="sum, i, number" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <for variable="i" start="1" end="11" direction="inc" step="1">
+                <output expression="&quot;Enter a number&quot;" newline="True"/>
+                <input variable="number"/>
+                <assign variable="sum" expression="sum+number"/>
+            </for>
+            <output expression="sum" newline="True"/>
+            <output expression="&quot;&#3588;&#3656;&#3634;&#3648;&#3593;&#3621;&#3637;&#3656;&#3618;&#3609;&quot;&amp;(sum/10)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

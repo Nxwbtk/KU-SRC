@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-05 09:23:41 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MTY6MTEgQU07MjkwMg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MjM6NDEgQU07MTszMDEx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Please input your name.&quot;" newline="True"/>
+            <declare name="name" type="String" array="False" size=""/>
+            <input variable="name"/>
+            <output expression="&quot;Hello, &quot; &amp; name" newline="True"/>
+            <output expression="&quot;Nice to meet you.&quot; &amp; name" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

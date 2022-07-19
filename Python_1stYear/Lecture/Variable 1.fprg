@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-05 09:16:08 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDg6NTQ6NDEgQU07MjkwNg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MTY6MDggQU07MTszMDE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="MyName" type="String" array="False" size=""/>
+            <declare name="Age, Weight" type="Integer" array="False" size=""/>
+            <declare name="Grade, Height" type="Real" array="False" size=""/>
+            <declare name="StayatHome" type="Boolean" array="False" size=""/>
+            <assign variable="MyName" expression="&quot;Bunthakan&quot;"/>
+            <assign variable="Age" expression="18"/>
+            <assign variable="Height" expression="1.70"/>
+            <assign variable="StayatHome" expression="TRUE"/>
+            <output expression="&quot;My Name is &quot; &amp; MyName &amp; &quot;.&quot;" newline="True"/>
+            <output expression="&quot;I am &quot; &amp; Age &amp; &quot; years old.&quot;" newline="True"/>
+            <input variable="Weight"/>
+            <output expression="&quot;I am &quot; &amp; Weight &amp; &quot; kg.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

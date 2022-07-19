@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-02 08:28:43 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MDg6MTc6MDIgQU07MjkwMA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MDg6Mjg6NDMgQU07MTszMDE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="max, current, sum" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <output expression="&quot;Enter max round : &quot;" newline="True"/>
+            <input variable="max"/>
+            <for variable="current" start="1" end="max" direction="inc" step="3">
+                <output expression="&quot;current round : &quot;&amp;current" newline="True"/>
+                <assign variable="sum" expression="sum + current"/>
+            </for>
+            <output expression="sum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-12 09:58:23 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDk6Mjg6MDEgQU07MjkwMg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDk6NTg6MjMgQU07MTszMDE3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Amount, Discount" type="Real" array="False" size=""/>
+            <declare name="Member" type="String" array="False" size=""/>
+            <output expression="&quot;&#3651;&#3626;&#3656;&#3592;&#3635;&#3609;&#3623;&#3609;&#3648;&#3591;&#3636;&#3609;&#3586;&#3629;&#3591;&#3588;&#3640;&#3603; : &quot;" newline="True"/>
+            <input variable="Amount"/>
+            <output expression="&quot;membership (Y/N) : &quot;" newline="True"/>
+            <input variable="Member"/>
+            <if expression="(Amount &gt; 5000) &amp;&amp; (Member == &quot;Y&quot; || Member == &quot;y&quot;)">
+                <then>
+                    <assign variable="Discount" expression="Amount * 0.2"/>
+                </then>
+                <else>
+                    <if expression="(Amount&gt;5000)&amp;&amp;(Member==&quot;N&quot; || Member==&quot;n&quot;)">
+                        <then>
+                            <assign variable="Discount" expression="Amount*0.1"/>
+                        </then>
+                        <else>
+                            <assign variable="Discount" expression="Amount * 0.05"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Discount : &quot; &amp; Discount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

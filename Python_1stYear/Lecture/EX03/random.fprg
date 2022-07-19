@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-02 10:44:49 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MDk6NDc6NDAgQU07MjkwNg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MTA6NDQ6NDkgQU07MTszMDEy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="rd, guess, trial" type="Integer" array="False" size=""/>
+            <assign variable="rd" expression="random(10)"/>
+            <assign variable="trial" expression="0"/>
+            <do expression="guess!=rd">
+                <output expression="&quot;Guess number : &quot;" newline="True"/>
+                <input variable="guess"/>
+                <if expression="guess==rd">
+                    <then>
+                        <output expression="&quot;Correct! The Answer is &quot;&amp;rd" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Wrong! Try again&quot;" newline="True"/>
+                    </else>
+                </if>
+                <assign variable="trial" expression="trial + 1"/>
+            </do>
+            <output expression="&quot;The number of trial is &quot;&amp;trial" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ChatchaiKASEMTAWEECH"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-14 05:59:51 PM"/>
+        <attribute name="created" value="Q2hhdGNoYWlLQVNFTVRBV0VFQ0g7REVTS1RPUC1JUUVKR0IzOzIwMjEtMDctMTQ7MDU6NTU6MjUgUE07NDAyMg=="/>
+        <attribute name="edited" value="Q2hhdGNoYWlLQVNFTVRBV0VFQ0g7REVTS1RPUC1JUUVKR0IzOzIwMjEtMDctMTQ7MDU6NTk6NTEgUE07Mjs0MTM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Top, Low" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter Top Blood Pressure : &quot;" newline="True"/>
+            <input variable="Top"/>
+            <output expression="&quot;Enter Low Blood Pressure : &quot;" newline="True"/>
+            <input variable="Low"/>
+            <if expression="(Top &lt; 120 ) &amp;&amp; (Low &lt; 80)">
+                <then>
+                    <output expression="&quot;Good blood pressure.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="(Top &lt; 129 ) &amp;&amp; (Low &lt; 84)">
+                        <then>
+                            <output expression="&quot;Normal blood pressure.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="(Top &lt; 139 ) &amp;&amp; (Low &lt; 89)">
+                                <then>
+                                    <output expression="&quot;Quite high blood pressure.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;High blood pressure.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

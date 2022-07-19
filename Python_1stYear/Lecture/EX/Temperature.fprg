@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-19 09:14:18 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDg6NDQ6MzggQU07MjkxNg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDk6MTQ6MTggQU07MjszMDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="C, F, K" type="Real" array="False" size=""/>
+            <output expression="&quot;&#3629;&#3640;&#3603;&#3627;&#3616;&#3641;&#3617;&#3639;&#3607;&#3637;&#3656;&#3605;&#3657;&#3629;&#3591;&#3585;&#3634;&#3619;&#3649;&#3611;&#3621;&#3591; (C) :&quot;" newline="True"/>
+            <input variable="C"/>
+            <assign variable="F" expression="9/5*(C) + 32"/>
+            <output expression="C&amp;&quot; &#3629;&#3591;&#3624;&#3634;&#3648;&#3595;&#3621;&#3648;&#3595;&#3637;&#3618;&#3624; &#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610; &quot; &amp; F&amp;&quot; &#3629;&#3591;&#3624;&#3634;&#3615;&#3634;&#3648;&#3619;&#3609;&#3652;&#3630;&#3605;&#3660;&quot;" newline="True"/>
+            <assign variable="K" expression="C+273"/>
+            <output expression="C&amp;&quot; &#3629;&#3591;&#3624;&#3634;&#3648;&#3595;&#3621;&#3648;&#3595;&#3637;&#3618;&#3624; &#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610; &quot; &amp; K &amp;&quot; &#3629;&#3591;&#3624;&#3634;&#3648;&#3588;&#3621;&#3623;&#3636;&#3609;&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

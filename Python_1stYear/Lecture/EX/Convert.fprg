@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-19 10:35:36 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDk6MjY6MDIgQU07MjkwOA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MTA6MzU6MzYgQU07MjszMDE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Baht, USD, EURO, YEN" type="Real" array="False" size=""/>
+            <declare name="Foreign" type="String" array="False" size=""/>
+            <output expression="&quot;Enter Money(Baht):&quot;" newline="True"/>
+            <input variable="Baht"/>
+            <output expression="&quot;Enter Foreign Currency (USD/EURO/YEN):&quot;" newline="True"/>
+            <input variable="Foreign"/>
+            <if expression="Foreign==&quot;USD&quot;">
+                <then>
+                    <assign variable="USD" expression="Baht/31"/>
+                    <output expression="Baht&amp;&quot; baht = &quot;&amp;USD&amp;&quot;USD&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Foreign==&quot;EURO&quot;">
+                        <then>
+                            <assign variable="EURO" expression="Baht/36.5"/>
+                            <output expression="Baht&amp;&quot; baht = &quot;&amp;EURO&amp;&quot;EURO&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Foreign==&quot;YEN&quot;">
+                                <then>
+                                    <assign variable="YEN" expression="Baht/0.29"/>
+                                    <output expression="Baht&amp;&quot; baht = &quot;&amp;YEN&amp;&quot;YEN&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;We don't have this option plaese try again.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

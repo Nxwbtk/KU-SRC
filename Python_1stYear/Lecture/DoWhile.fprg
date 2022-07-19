@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-02 09:04:39 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MDg6NDc6MTggQU07MjkxMA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDgtMDI7MDk6MDQ6MzkgQU07MzszMDE3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Sum, Score" type="Integer" array="False" size=""/>
+            <assign variable="Sum" expression="0"/>
+            <do expression="Score &gt; 0 &amp;&amp; Score &lt; 101">
+                <output expression="&quot;Enter Score : &quot;" newline="True"/>
+                <input variable="Score"/>
+                <if expression="Score &gt; 0 &amp;&amp; Score &lt; 101">
+                    <then>
+                        <assign variable="Sum" expression="Sum+Score"/>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <output expression="Sum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

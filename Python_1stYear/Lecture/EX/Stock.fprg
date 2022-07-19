@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-19 09:48:52 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDk6Mzc6MjggQU07MjkxOA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTk7MDk6NDg6NTIgQU07MTszMDI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Money, ADVANC, AOT, BBL" type="Integer" array="False" size=""/>
+            <declare name="Company" type="String" array="False" size=""/>
+            <output expression="&quot;Enter Money(baht):&quot;" newline="True"/>
+            <input variable="Money"/>
+            <output expression="&quot;Enter Company :&quot;" newline="True"/>
+            <input variable="Company"/>
+            <if expression="Company==&quot;ADVANC&quot;">
+                <then>
+                    <assign variable="ADVANC" expression="Money/190"/>
+                    <output expression="Money &amp; &quot;baht = &quot; &amp; ADVANC &amp;&quot; ADVANC Stocks&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Company==&quot;AOT&quot;">
+                        <then>
+                            <assign variable="AOT" expression="Money/48.5"/>
+                            <output expression="Money &amp; &quot;baht = &quot; &amp; AOT &amp;&quot; AOT Stocks&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Company==&quot;BBL&quot;">
+                                <then>
+                                    <assign variable="BBL" expression="Money/100"/>
+                                    <output expression="Money &amp; &quot;baht = &quot; &amp; BBL &amp;&quot; BBL Stocks&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;We don't have this company please try again.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

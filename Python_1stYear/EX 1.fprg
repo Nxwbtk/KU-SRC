@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-05 09:42:51 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MzY6NDcgQU07MjkxMw=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6NDI6NTEgQU07MTszMDEz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Please input X&quot;" newline="True"/>
+            <declare name="X" type="Integer" array="False" size=""/>
+            <input variable="X"/>
+            <output expression="&quot;Please input Y&quot;" newline="True"/>
+            <declare name="Y" type="Integer" array="False" size=""/>
+            <input variable="Y"/>
+            <declare name="Z" type="Real" array="False" size=""/>
+            <assign variable="Z" expression="Sqrt ((X^2)+(Y^2))"/>
+            <output expression="&quot;Z = &quot; &amp; Z" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

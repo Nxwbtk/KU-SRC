@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-26 09:28:50 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjY7MDk6MDQ6MjIgQU07MjkwNA=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjY7MDk6Mjg6NTAgQU07MTszMDE5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Ticket, price" type="Integer" array="False" size=""/>
+            <declare name="Destination" type="String" array="False" size=""/>
+            <output expression="&quot;Enter Tickets&quot;" newline="True"/>
+            <input variable="Ticket"/>
+            <output expression="&quot;Enter Destination&quot;" newline="True"/>
+            <input variable="Destination"/>
+            <if expression="Destination==&quot;USA&quot;||Destination==&quot;usa&quot;">
+                <then>
+                    <assign variable="price" expression="Ticket*49000"/>
+                    <output expression="Ticket &amp;&quot; &quot;&amp; Destination &amp; &quot; &quot; &amp; &quot;Tickets = &quot; &amp; price" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Destination==&quot;JAP&quot;||Destination==&quot;jap&quot;">
+                        <then>
+                            <assign variable="price" expression="Ticket*25000"/>
+                            <output expression="Ticket &amp;&quot; &quot;&amp; Destination &amp; &quot; &quot; &amp; &quot;Tickets = &quot; &amp; price" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Destination==&quot;RUS&quot;||Destination==&quot;rus&quot;">
+                                <then>
+                                    <assign variable="price" expression="Ticket*32000"/>
+                                    <output expression="Ticket &amp;&quot; &quot;&amp; Destination &amp; &quot; &quot; &amp; &quot;Tickets = &quot; &amp; price" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;We don't have this destination!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

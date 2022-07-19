@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-05 09:35:27 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MjQ6MTEgQU07MjkwMQ=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMDU7MDk6MzU6MjcgQU07MTszMDE4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Please input A&quot;" newline="True"/>
+            <declare name="A" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <output expression="&quot;Please input B&quot;" newline="True"/>
+            <declare name="B" type="Integer" array="False" size=""/>
+            <input variable="B"/>
+            <declare name="C" type="Integer" array="False" size=""/>
+            <assign variable="C" expression="A+B"/>
+            <output expression="&quot;A+B = &quot; &amp; C" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

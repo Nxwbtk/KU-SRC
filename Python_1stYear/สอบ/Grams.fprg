@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-26 01:02:48 PM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjY7MDk6Mjg6NTIgQU07MjkxMw=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjY7MDE6MDI6NDggUE07MTszMDI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Grams, oz, lb" type="Real" array="False" size=""/>
+            <declare name="Baht" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter Grams&quot;" newline="True"/>
+            <input variable="Grams"/>
+            <assign variable="oz" expression="Grams/28.35"/>
+            <assign variable="lb" expression="oz/16"/>
+            <assign variable="Baht" expression="Grams/15"/>
+            <output expression="Grams &amp; &quot; Grams = &quot;&amp;oz&amp;&quot; oz.&quot;" newline="True"/>
+            <output expression="Grams &amp; &quot; Grams = &quot;&amp;lb&amp;&quot; lb.&quot;" newline="True"/>
+            <output expression="Grams &amp; &quot; Grams = &quot;&amp;baht&amp;&quot; baht.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

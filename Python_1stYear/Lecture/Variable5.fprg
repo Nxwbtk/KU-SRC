@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="matee"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2564-07-05 09:58:57 AM"/>
+        <attribute name="created" value="bWF0ZWU7REVTS1RPUC1NREdBUFY4OzI1NjQtMDctMDU7MDk6MjY6NDEgQU07Mjg5MA=="/>
+        <attribute name="edited" value="bWF0ZWU7REVTS1RPUC1NREdBUFY4OzI1NjQtMDctMDU7MDk6NTg6NTcgQU07NzszMDE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Animal" type="String" array="False" size=""/>
+            <output expression="&quot;Please input Animal name.&quot;" newline="True"/>
+            <input variable="Animal"/>
+            <declare name="lenght" type="Integer" array="False" size=""/>
+            <assign variable="Lenght" expression="Len(Animal)"/>
+            <output expression="&quot;Lenght of Animal name:&quot; &amp; lenght" newline="True"/>
+            <output expression="&quot;The second character of Animal name : &quot; &amp; Char(Animal,1)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

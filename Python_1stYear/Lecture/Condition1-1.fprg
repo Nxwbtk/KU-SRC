@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-12 09:27:52 AM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDg6NTk6MDcgQU07MjkxMQ=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDk6Mjc6NTIgQU07MTszMDE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="age" type="Integer" array="False" size=""/>
+            <output expression="&quot;&#3585;&#3619;&#3640;&#3603;&#3634;&#3619;&#3632;&#3610;&#3640;&#3629;&#3634;&#3618;&#3640;&#3586;&#3629;&#3591;&#3607;&#3656;&#3634;&#3609;&quot;" newline="True"/>
+            <input variable="age"/>
+            <if expression="age&gt;=18">
+                <then>
+                    <declare name="isThai" type="String" array="False" size=""/>
+                    <output expression="&quot;&#3648;&#3611;&#3655;&#3609;&#3588;&#3609;&#3652;&#3607;&#3618;&#3627;&#3619;&#3639;&#3629;&#3652;&#3617;&#3656;&quot;" newline="True"/>
+                    <input variable="isThai"/>
+                    <if expression="isThai==&quot;Y&quot;||isThai==&quot;y&quot;">
+                        <then>
+                            <output expression="&quot;&#3588;&#3640;&#3603;&#3617;&#3637;&#3626;&#3636;&#3607;&#3608;&#3636;&#3660;&#3648;&#3621;&#3639;&#3629;&#3585;&#3605;&#3633;&#3657;&#3591;&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;&#3588;&#3640;&#3603;&#3652;&#3617;&#3656;&#3617;&#3637;&#3626;&#3636;&#3607;&#3608;&#3636;&#3660;&#3648;&#3621;&#3639;&#3629;&#3585;&#3605;&#3633;&#3657;&#3591;&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;&#3588;&#3640;&#3603;&#3652;&#3617;&#3656;&#3617;&#3637;&#3626;&#3636;&#3607;&#3608;&#3636;&#3660;&#3648;&#3621;&#3639;&#3629;&#3585;&#3605;&#3633;&#3657;&#3591;&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

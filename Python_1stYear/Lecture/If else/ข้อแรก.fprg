@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-12 09:30:56 PM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDk6MTY6NDUgUE07MjkyMg=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMTI7MDk6MzA6NTYgUE07MTszMDI4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Height, Weight, BMI" type="Real" array="False" size=""/>
+            <output expression="&quot;&#3626;&#3656;&#3623;&#3609;&#3626;&#3641;&#3591;&#3586;&#3629;&#3591;&#3588;&#3640;&#3603; (&#3648;&#3617;&#3605;&#3619;) &quot;" newline="True"/>
+            <input variable="Height"/>
+            <output expression="&quot;&#3609;&#3657;&#3635;&#3627;&#3609;&#3633;&#3585;&#3586;&#3629;&#3591;&#3588;&#3640;&#3603; (&#3585;&#3636;&#3650;&#3621;&#3585;&#3619;&#3633;&#3617;) &quot;" newline="True"/>
+            <input variable="Weight"/>
+            <assign variable="BMI" expression="Weight/(Height^2)"/>
+            <if expression="BMI&lt;18.5">
+                <then>
+                    <output expression="&quot;You are skinny.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="BMI&gt;=18.5&amp;&amp;BMI&lt;=22.90">
+                        <then>
+                            <output expression="&quot;You are normal weight&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="BMI&gt;=23&amp;&amp;BMI&lt;=24.90">
+                                <then>
+                                    <output expression="&quot;You are chubby.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;You are too fat.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

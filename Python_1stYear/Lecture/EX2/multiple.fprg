@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="news_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-25 11:54:27 PM"/>
+        <attribute name="created" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjU7MTA6MDU6MzMgUE07MjkxMw=="/>
+        <attribute name="edited" value="bmV3c187REVTS1RPUC1NRFM4TktOOzIwMjEtMDctMjU7MTE6NTQ6MjcgUE07MTszMDI5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="number, multiple" type="Integer" array="False" size=""/>
+            <assign variable="multiple" expression="1"/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="number"/>
+            <while expression="multiple&lt;13">
+                <output expression="number &amp; &quot; x &quot; &amp; multiple &amp; &quot; = &quot; &amp; number*multiple" newline="True"/>
+                <assign variable="multiple" expression="multiple + 1"/>
+            </while>
+            <output expression="&quot;&#3592;&#3610;&#3650;&#3611;&#3619;&#3649;&#3585;&#3619;&#3617;&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
