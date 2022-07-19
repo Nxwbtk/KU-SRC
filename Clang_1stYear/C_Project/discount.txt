@@ -1,0 +1,3 @@
+Discount1 10
+
+Discount2 100.00
