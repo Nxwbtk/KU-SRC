@@ -77,7 +77,6 @@ int main(void)
         switch (choice)
         {
         case 1:
-			system ("clear");
 			printf("Enter the value to be insert: ");
             scanf("%d", &value);
             push(value);
