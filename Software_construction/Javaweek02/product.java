@@ -33,12 +33,12 @@ class BigMountain extends GI{
 }
 class Puket extends GI{
     public void prod() {
-        System.out.println("Phuket : Pearl Phuket");
+        System.out.println("Phuket : Kaimook Phuket");
     }
 }
 class RaNong extends GI{
     public void prod() {
-        System.out.println("Ra Nong : Durainnai ra nong");
+        System.out.println("Ra Nong : Durainnaiwong ra nong");
     }
 }
 class Payao extends GI{
