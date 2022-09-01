@@ -5,35 +5,30 @@ public class ex05
 {
 	public static void main(String arg[])
 	{
-		ArrayList<String>	nameList = new ArrayList<String>();
-		ArrayList<String>	nameListSorted = new ArrayList<String>();
-		ArrayList<Integer>	popList = new ArrayList<Integer>();
-		ArrayList<Integer>	popTemp = new ArrayList<Integer>();
+		ArrayList<String>	sort_name = new ArrayList<String>();
+		ArrayList<Integer>	people = new ArrayList<Integer>();
 
-		nameList.add("Thailand");
-		popList.add(69800000);
-		nameList.add("Chaina");
-		popList.add(1402000000);
-		nameList.add("Myanma");
-		popList.add(54410000);
-		nameList.add("Vietnam");
-		popList.add(97340000);
-		nameList.add("India");
-		popList.add(1380000000);
-
-		popTemp.addAll(popList);
-		Collections.sort(popTemp);
-		Collections.reverse(popTemp);
-		for (int i = 0; i < popTemp.size(); i++)
+		people.add(69800000);
+		people.add(1402000000);
+		people.add(54410000);
+		people.add(97340000);
+		people.add(1380000000);
+		
+		Collections.sort(people);
+		Collections.reverse(people);
+		for (Integer i : people)
 		{
-			for (int j = 0; j < popList.size(); j++)
-			{
-				if (popTemp.get(i) == popList.get(j))
-				{
-					nameListSorted.add(nameList.get(j));
-				}
-			}
+			if (i == 69800000)
+				sort_name.add("Thailand");
+			else if (i == 1402000000)
+				sort_name.add("China");
+			else if (i == 54410000)
+				sort_name.add("Myanma");
+			else if (i == 97340000)
+				sort_name.add("Vietnam");
+			else if (i == 1380000000)
+				sort_name.add("India");
 		}
-		System.out.println(nameListSorted);
+		System.out.println(sort_name);
 	}
 }
