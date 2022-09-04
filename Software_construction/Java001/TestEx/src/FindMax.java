@@ -14,9 +14,7 @@ public class FindMax {
     public static void main(String[] args) {
         try {
             Scanner myObj = new Scanner(System.in);
-            System.out.print("Enter lenght for array : ");
-            int index = myObj.nextInt();
-            int[] array = new int[index];
+            int[] array = new int[5];
             int i = 0;
             int max = 0;
 
