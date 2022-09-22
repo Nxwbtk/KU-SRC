@@ -15,6 +15,7 @@ public class Test {
             Hello h = new Hello();
             int result = h.calculate(n);
             System.out.println("Result = "+result);
+            sc.close();
         }catch(Exception e){
             System.out.println("Error" + e);
         }

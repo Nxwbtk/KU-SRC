@@ -1,11 +1,12 @@
 /**
- * Name     : Bunthakan Sirikamonthip 
- * ID       : 6430200418
- * Section  : 831
+ * Name         : Bunthakan Sirikamonthip 
+ * ID           : 6430200418
+ * Section      : 831
+ * Description  : This is a random program that use method from Math class and compare with user input.
  */
 import java.util.Scanner;
 
-public class RanNum {
+public class RandomNumber {
 
     public static void main(String[] args) {
         try {
