@@ -1,0 +1,7 @@
+/**
+ * Priceable
+ */
+public interface Priceable {
+
+    
+}
