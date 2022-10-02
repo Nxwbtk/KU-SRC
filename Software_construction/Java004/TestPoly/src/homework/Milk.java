@@ -1,3 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Milk.java                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/02 22:06:07 by bsirikam          #+#    #+#             */
+/*   Updated: 2022/10/02 22:06:08 by bsirikam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
+ * Name     : Bunthakan Sirikamonthip
+ * ID       : 6430200418
+ * Section  : 831
+ */
 public class Milk implements Priceable {
     public int getPrice(){
         sum = 50 * count;
