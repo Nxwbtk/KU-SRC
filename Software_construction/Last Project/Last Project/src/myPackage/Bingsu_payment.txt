@@ -1,0 +1,6 @@
+Order
+Size :
+     Small 75 Baht
+Topping :
+    Strawberry 30 Baht
+Total = 105

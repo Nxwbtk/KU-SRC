@@ -14,7 +14,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Shape[] a = {new Triangle(3, 4), new Square(5)};
+        Shape[] a = {new Triangle(4, 5),
+                new Square(3)};
         System.out.println(sumArea(a));
     }
 }

@@ -11,6 +11,6 @@ public class Square extends Shape {
     }
     @Override
     public double getArea() {
-        return (w * w);
+        return (this.w * this.w);
     }
 }

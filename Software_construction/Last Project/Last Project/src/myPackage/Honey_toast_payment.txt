@@ -1,0 +1,6 @@
+Order
+Size :
+     Medium 175 baht
+Topping :
+    Chocolate 5 Baht
+Total = 180
