@@ -1,4 +1,4 @@
-NAME = hello
+NAME = moves
 
 OBJ = $(NAME).o
 
