@@ -1,0 +1,538 @@
+<HTML>
+<HEAD>
+<META name=vsisbn content="0849370019">
+<META name=vstitle content="The Information System Consultant's Handbook: Systems Analysis and Design">
+<META name=vsauthor content="William S. Davis, David C. Yen">
+<META name=vsimprint content="CRC Press">
+<META name=vspublisher content="CRC Press LLC">
+<META name=vspubdate content="12/28/98">
+<META name=vscategory content="Business and IT Management: Consulting,Networking and Telecommunications: Network Design,Networking and Telecommunications: System Management">
+
+
+
+
+
+<TITLE>The Information System Consultant's Handbook: Systems Analysis and Design:Database administration</TITLE>
+
+<!-- HEADER -->
+
+<STYLE type="text/css"> 
+ <!--
+ A:hover  {
+ 	color : Red;
+ }
+ -->
+</STYLE>
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<script>
+<!--
+function displayWindow(url, width, height) {
+         var Win = window.open(url,"displayWindow",'width=' + width +',height=' + height + ',resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</script>
+<SCRIPT>
+<!--
+function popUp(url) {
+        var Win = window.open(url,"displayWindow",'width=400,height=300,resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</SCRIPT>
+
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var axel = Math.random() + "";
+var ord = axel * 1000000000000000000 + "?";
+
+//This part of script alleviates a Netscape document.write bug
+<!-- 
+NS4 = document.layers;
+if (NS4) {
+origWidth = innerWidth;
+origHeight = innerHeight;
+}
+function reDo() {
+if (innerWidth != origWidth || innerHeight != origHeight) 
+location.reload();
+}
+if (NS4) onresize = reDo;
+//-->
+</SCRIPT>
+
+</HEAD>
+
+<body background="/images/back.jpg" bgcolor="#FFFFFF" link="#003399" alink="#FF0000" vlink="#003399" topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
+
+<table bgcolor="#003366" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="3">
+		
+		<table width="100%">
+			<tr valign="top">
+				<td bgcolor="#003366">&nbsp;&nbsp;<a href="http://www.earthweb.com" target="resource window"><img src="/images/ew_logo.jpg" width="82" height="58"  alt="EarthWeb" border="0"></a>&nbsp;&nbsp;&nbsp;</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" border="0"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ilayer id="ph1" visibility="hide" width="468" height="60"></ilayer>');
+//-->
+</SCRIPT> 
+
+<!-- <noscript>
+<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456?">
+<IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456? width="468" height="60" border="0"></A>
+</noscript> -->
+				</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="javascript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width="160" height="60" frameborder="no" border="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" border=0 height="60" width="160"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ILAYER id="layer1" visibility="hidden" width=160 height=60></ILAYER>');
+//-->
+</SCRIPT></td>
+<td><a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html">
+<img src="/images/dotblue.gif" border="0" height="1" width="1" align="right"></a></td>
+			</tr>
+		</table>
+		
+		</td>
+	</tr>
+		<tr>
+		<td height="1" colspan="3" bgcolor="#003366"><img src="/images/dotclear.gif" border=0 alt=""></td>
+	</tr>
+	
+</table>
+
+<!-- END HEADER -->
+
+
+<!-- BEGIN SUB HEADER -->
+
+<table bgcolor="#003366" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+<!-- ITK TOPNAV -->
+	
+	<tr>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_off.gif" alt="Home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search.gif" alt="Search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq.gif" alt="FAQ" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap.gif" alt="Sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us.gif" alt="Contact Us" border="0"></a></td> 
+	</tr>
+	
+<!-- END of ITK TOPNAV -->
+
+<!-- ITK LOGO and newsletter sign up -->
+
+</table>
+	
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+
+	<tr>
+		<td align="left" valign="top" nowrap><img src="/images/itk_logo_sm.jpg" alt="" border="0"></td>
+		<td align="right"><font face="verdana, sans-serif" size="1">
+
+<script language="JavaScript">
+<!-- 
+
+var days = new Array(8);
+days[1] = "Sunday";
+days[2] = "Monday";
+days[3] = "Tuesday";
+days[4] = "Wednesday";
+days[5] = "Thursday";
+days[6] = "Friday";
+days[7] = "Saturday";
+
+var months = new Array(13);
+months[1] = "January";
+months[2] = "February";
+months[3] = "March";
+months[4] = "April";
+months[5] = "May";
+months[6] = "June";
+months[7] = "July";
+months[8] = "August";
+months[9] = "September";
+months[10] = "October";
+months[11] = "November";
+months[12] = "December";
+
+var dateObj = new Date()
+var wday = days[dateObj.getDay() + 1]
+var lmonth = months[dateObj.getMonth() + 1]
+var date = dateObj.getDate()
+var fyear = dateObj.getYear()
+if (fyear <1000) fyear += 1900;
+document.write(wday + ", " + lmonth + " " + date + ", " + fyear)
+                
+//-->
+</script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<br><br>
+
+<!-- <img src="/images/enterprise_logo.gif" width="254" height="51" border="0"> --></td>
+	</tr>
+</table>
+
+<!-- END ITK LOGO and newsletter sign up-->
+	
+<!-- begin of ITK left NAV -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+	<table border="0" cellpadding="0" cellspacing="0">
+	
+	
+		<tr>
+		<td width="145" valign="top" align="left" rowspan=8>
+		
+	<!-- KEYWORD SEARCH -->	
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+	
+<form name="keyword" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewkwk2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/keyword_searcha.gif" vspace="5" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vsisbn vspublisher vspubdate">		
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+		<table width="145" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="145">&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="" checked><font face="arial, helvetica" size="1" color="#FFFFFF">All ITKnowledge</FONT><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="sourcecode"><font face="arial, helvetica" size="1" color="#FFFFFF">Source Code</FONT><br>
+
+			<font face="arial, helvetica" size="2">
+			<img src="/images/dotclear.gif" width="1" height="5" alt="" border="0"><br>
+			
+			&nbsp;&nbsp;<a href="/search/search-tips.html"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Search Tips</font></a><br>
+			&nbsp;&nbsp;<a href="/search/"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Advanced Search</font></a><br>
+			
+			</font>
+			
+		</td>
+		<td width="5"><img src="/images/dotclear.gif" width=5 height=10 hspace="5" alt="" border="0"></td>
+		</tr>
+		</table>
+	</form>
+		
+		
+<!-- BROWSE BY TOPIC -->
+		
+
+<form name="meta" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewmetak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/publication_searcha.gif" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="allbooks_p2">
+<INPUT type="hidden" name="altcoll" value="corpitk_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vspublisher vspubdate">
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+<table width="145" border="0" cellpadding="0" cellspacing="0">
+	
+			<tr>
+			<td valign="top">
+			&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br><font face="arial, helvetica" size="2">
+			&nbsp;&nbsp;<SELECT NAME="metatags" style="font-size: 12; font-family: sans-serif;" size="1">
+			<option value="vstitle" SELECTED>Title
+			<option value="vsauthor">Author
+			<option value="vspublisher">Publisher
+			<option value="vsisbn">ISBN			
+			</SELECT><br><br></font>
+			</td>
+			</tr>
+</table>
+</form>
+
+<form action="" name="catlist">	
+<table width="145" border="0" cellpadding="0" cellspacing="0">				
+			<tr>
+			<td valign="top">
+			<img src="/images/jump_topica.gif" width="145" alt="" border="0">
+			</td>
+			</tr>
+			<tr>
+			<td width="145">
+				
+	        	<font face="Arial,helvetica" size="1">
+				&nbsp;&nbsp;<SELECT NAME="cat" onChange='top.location.href=this.options[selectedIndex].value;' style="font-size: 10; font-family: sans-serif;">
+                        <option value="" selected>Please Select
+                        <option value="">-----------
+						<option value="/reference/dir.1-busman.html">Business &amp; IT Mgmt
+						<option value="/reference/dir.2-certification.html">Certification &amp; Training                       
+						<option value="/reference/dir.3-databaseanderp.html">Database &amp; ERP
+                        <option value="/reference/dir.4-desktopapps.html">Desktop Apps
+                        <option value="/reference/dir.5-desktoppubanddesign.html">Graphic Design
+                        <option value="/reference/dir.6-generalinternet.html">General Internet
+                        <option value="/reference/dir.7-hardwareandos.html">Hardware &amp; OS
+                        <option value="/reference/dir.8-ibmredbooks.html">IBM RedBooks
+                        <option value="/reference/dir.9-networktelcom.html">Network &amp; Telecom
+						<option value="/reference/dir.10-websoftwaredev.html">Web &amp; Software Dev
+						<option value="/reference/dir.11-careers.html">Careers
+                        <option value="">-----------
+                        <option value="/reference/whatsnew.html">New Arrivals
+                        </SELECT>
+						</font>
+			</td>
+			</tr>
+</table>
+</form>
+	
+<!-- LEFT NAV SEARCH END -->
+
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+<a href="/desktop/"><img src="/images/desktop_icona.gif" border=0 alt="Go to ITKnowledge Academic"></a><br><br></td>
+	</tr>
+</table>
+		
+<!-- BEGIN TEXT LINKS -->
+
+
+<!-- END TEXT LINKS -->
+
+<!-- END LEFT NAVBAR -->
+
+
+<!-- END LEFT NAVBAR -->
+	
+	<td width="15"><img src="/images/dotclear.gif" width="15" alt="" border="0"></td>
+
+<!-- end of ITK left NAV -->
+
+<!-- begin main content -->
+	
+	<td width="100%" valign="top" align="left">
+		<br>
+
+<!-- END SUB HEADER -->
+<!-- Created by dB Page Builder.  http://www.pchelponline.com/bluestem -->
+
+<!--Begin Content Column -->
+
+<TABLE border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width=75 valign=top>
+<img src="/images/sm_covers/0849370019.gif" width=60 height=73 alt="The Information System Consultant's Handbook: Systems Analysis and Design" border="1">
+</td>
+<td align="left">
+    <font face="arial, helvetica" size="-1" color="#336633"><b>The Information System Consultant's Handbook: Systems Analysis and Design</b></font>
+    <br>
+    <font face="arial, helvetica" size="-1"><i>by William S. Davis, David C. Yen</i>
+    <br>
+    CRC Press,&nbsp;CRC Press LLC
+    <br>
+    <b>ISBN:</b>&nbsp;0849370019<b>&nbsp;&nbsp;&nbsp;Pub Date:</b>&nbsp;12/28/98</font>&nbsp;&nbsp;<A HREF="http://www.digitalguru.com/dgstore/product.asp?isbn=0849370019&ac%5Fid=28" TARGET="anotherwindows"><img src="/images/buyit.gif" width=64 height=23 hspace="5" align="middle" alt="Buy It" border="0"></a>
+</td>
+</tr>
+</table>
+<P>
+<form name="advanced" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewintrak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="score desc">
+<INPUT name="fields" type=hidden value="vdkvgwkey score vstitle vsisbn vsauthor vspublisher vspubdate">
+<INPUT name="imageprefix" type=hidden value="http://academic.itknowledge.com">
+<INPUT name="ssiFolder" type=hidden value="itkaca">
+<INPUT name="topics" type=hidden value="itk_academic">
+<INPUT type="hidden" name="bookid" value="t_0849370019">
+
+<font face="arial, helvetica" size=2><b>Search this book:</b></font><br>
+<INPUT NAME="query" size=25 VALUE="">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle>
+
+</form>
+
+
+<!-- Empty Reference Subhead -->
+
+<!--ISBN=0849370019//-->
+<!--TITLE=The Information System Consultant's Handbook: Systems Analysis and Design//-->
+<!--AUTHOR=William S. Davis//-->
+<!--AUTHOR=David C. Yen//-->
+<!--AUTHOR=T. M. Rajkumar//-->
+<!--AUTHOR=Michael S. Broida//-->
+<!--AUTHOR=Timothy C. Krehbiel//-->
+<!--AUTHOR=Bruce L. Bowerman//-->
+<!--AUTHOR=Richard T. O'Connel//-->
+<!--AUTHOR=John "Skip" Benamati et al.//-->
+<!--PUBLISHER=CRC Press LLC//-->
+<!--CHAPTER=82//-->
+<!--PAGES=665-668//-->
+<!--UNASSIGNED1//-->
+<!--UNASSIGNED2//-->
+
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="../ch81/81-02.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="82-02.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+<P><BR></P>
+<H2><A NAME="Heading1"></A><FONT COLOR="#000077">Chapter 82<BR>Database administration
+</FONT></H2>
+<P><I>John "Skip" Benamati Miami University</I></P>
+<H3><A NAME="Heading2"></A><FONT COLOR="#000077">82.1 Purpose</FONT></H3>
+<P>The purpose of database administration is to provide reliable, consistent, secure, and available corporate-wide data. This chapter discusses the roles performed by database administration, distinguishes database administration and data administration, and describes several database operation and maintenance issues.
+</P>
+<H3><A NAME="Heading3"></A><FONT COLOR="#000077">82.2 Strengths, weaknesses, and limitations</FONT></H3>
+<P>Where appropriate, the strengths and weaknesses of various techniques will be discussed in context.
+</P>
+<H3><A NAME="Heading4"></A><FONT COLOR="#000077">82.3 Inputs and related ideas</FONT></H3>
+<P>Database administration uses such tools as CASE (Chapter 5), the data dictionary (Chapter 25), entity-relationship models (Chapter 26), and data normalization (Chapter 28). Database design is discussed in Chapter 45. System controls are discussed in Chapter 77. Several key data concepts are introduced in Chapters 43 and 44.
+</P>
+<H3><A NAME="Heading5"></A><FONT COLOR="#000077">82.4 Concepts</FONT></H3>
+<P>The purpose of database administration is to provide reliable, consistent, secure, and available corporate-wide data. This chapter discusses the roles performed by database administration, distinguishes database administration and data administration, and describes several database operation and maintenance issues.
+</P>
+<H4 ALIGN="LEFT"><A NAME="Heading6"></A><FONT COLOR="#000077">82.4.1 Database administration roles</FONT></H4>
+<P>Although database administration (DBA) means different things to different organizations, the overall objective is to achieve centralization and control of the corporation&#146;s data resource.
+</P>
+<P><FONT SIZE="+1"><B>82.4.1.1 Planning</B></FONT></P>
+<P>Database administration is responsible for developing a strategy for the control and use of corporate data and for developing, implementing and supporting standards, guidelines, and tools that are consistent with the strategy. The planning task includes performing strategic planning for managing and centralizing data; evaluating, selecting, and implementing a database management system (DBMS) and related hardware and tools; and ensuring that priorities for application development are consistent with the long range data strategy.
+</P>
+<P><FONT SIZE="+1"><B>82.4.1.2 Design</B></FONT></P>
+<P>Both conceptual and physical database design (Chapter 45) are database administration (DBA) responsibilities. The DBA group provides technical and design support for application developers and controls the conceptual design to ensure that it is consistent with and integrated into the corporate data strategy. Physical database design requires making effective use of the database management system and related tools. Additionally, the DBA group establishes corporate guidelines and standards to ensure data consistency across applications.
+</P>
+<P><FONT SIZE="+1"><B>82.4.1.3 Operation and control</B></FONT></P>
+<P>The database administration group supports existing operational systems and is responsible for data integrity, security, availability, and the performance of the database management system. Database administration also provides education and support for the use of the data standards, guidelines, and tools.
+</P>
+<P><FONT SIZE="+1"><B>82.4.1.4 Usage</B></FONT></P>
+<P>Database administration provides documentation and support for using data by developing and enforcing standards for database content and use. Data dictionaries (Chapter 25) and CASE (Chapter 5) are used to develop documentation, enforce standards, and support design. Tools such as query languages also fall under DBA control. Knowledge, education, and support for all database-related software are other DBA responsibilities.
+</P>
+<H4 ALIGN="LEFT"><A NAME="Heading7"></A><FONT COLOR="#000077">82.4.2 Data administration</FONT></H4>
+<P>The management side of the database administration group is sometimes called data administration (DA). The data administration people are the policy setters and decision makers responsible for the corporate data. They provide an executive level vision of the corporate data needs. The broader database administration group includes the technicians who implement and enforce the decisions and standards the data administration people put in place.<SUP><SMALL>1</SMALL></SUP> Data administration tends to deal with the conceptual side of the data and database administration deals with the physical side.</P>
+<P>Whether or not this break is formalized, database administration calls for a blend of management, technical, and interpersonal skills. Data processing skills are rarely used directly, but the database administration group must have an appreciation for them. Technical skills are required to provide ongoing support for the use of the data model. Interpersonal skills are required because database administration must resolve across functional boundaries any conflicts that concern how the data will be stored and presented. Data administration calls for stronger interpersonal skills to work with the users during logical design.</P>
+<H4 ALIGN="LEFT"><A NAME="Heading8"></A><FONT COLOR="#000077">82.4.3 Operation and maintenance issues</FONT></H4>
+<P>This section covers several database administration operation and maintenance standards, tools, utilities, and methods.
+</P>
+<P><FONT SIZE="+1"><B>82.4.3.1 Implementation guidelines</B></FONT></P>
+<P>Implementation guidelines define how applications will be developed and installed with respect to data. The database administration role is primarily physical database implementation and support, but some of the coding effort may be defined and enforced by the DBA group.
+</P>
+<P><FONT SIZE="+1"><B>82.4.3.2 Error handling</B></FONT></P>
+<P>Database administration is responsible for the error-handling routines that protect the integrity of the database. Techniques for handling errors may require common error routines to ensure databases are rolled back to a point of consistency in the event of an error. Typically, all transactions running in a database management system environment are logged on a transaction log and the database is not permanently altered until the transaction is run to completion or committed. Error handling becomes more complex if more than one database management system is involved in a transaction. Techniques such as two-phase commits may be employed. Two-phase commits synchronize the committing of transaction changes across multiple database management systems to ensure that the transaction is either run to completion or is rolled back on all of the systems.
+</P>
+<P><FONT SIZE="+1"><B>82.4.3.3 Security</B></FONT></P>
+<P>Security is a means of ensuring data integrity and protecting confidential information by controlling who has the authority to view, alter, or delete the data in a database. The ultimate responsibility falls on database administration, but the ability to grant authority can be delegated to other individuals as long as DBA maintains control. Security can be implemented in the database management system itself or controlled at the application level.
+</P>
+<P><FONT SIZE="+1"><B>82.4.3.4 Backup and recovery</B></FONT></P>
+<P>The responsibility for designing and implementing backup and recovery procedures rests with database administration. Data can be lost in many ways, including program errors, hardware failures, incorrect changes, and bad input data. A backup copy is used to restore a table of data to the point in time when the copy was made. Recovery procedures help to ensure that the recovered data are correct.
+</P><P><BR></P>
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="../ch81/81-02.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="82-02.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<hr width="90%" size="1" noshade>
+<div align="center">
+<font face="Verdana,sans-serif" size="1">Copyright &copy; <a href="/reference/crc00001.html">CRC Press LLC</a></font>
+</div>
+<!-- all of the reference materials (books) have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- BEGIN SUB FOOTER -->
+	<br>
+	<img src="/images/dotclear.gif" width="5" height="7" border="0">
+	</TD>
+    </TR>
+	</TABLE>
+	
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="left" width="160"><img src="/images/bot_curve.jpg" width="160" alt="" border="0"></td>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_bot.gif" alt="home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe_bot.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search_bot.gif" alt="search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq_bot.gif" alt="faq" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap_bot.gif" alt="sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us_bot.gif" alt="contactus" border="0"></a><img src="/images/dotclear.gif" width=260 height="1" alt="" border="0"></td> 
+	</tr>
+</table>
+
+	<table width="100%" bgcolor="#003366" border=0 cellpadding=0 cellspacing=0>
+		<tr>
+		<td align="left" width=145><img src="/images/dotclear.gif" width=145 height="1" alt="" border="0"></td>
+		
+		
+<!-- END SUB FOOTER -->
+
+<!-- all of the books have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- FOOTER -->
+			
+<td align="left" bgcolor="#003366">
+<table border="0" cellspacing="10" cellpadding="5">
+<tr>
+<td align="center">
+<font face="arial, helvetica" size="1" color="#cccccc"><b><a href="/products.html"><font color="#0099CC">Products</font></a>&nbsp;|&nbsp;<a href="/contactus.html"><font color="#0099CC">Contact Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|about_us-jhtml.72.0.-.0.jhtml" target="resource window"><font color="#0099CC">About Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">Privacy</font></a>&nbsp;|&nbsp;<a href="http://www.itmarketer.com/" target="resource window"><font color="#0099CC">Ad Info</font></a>&nbsp;|&nbsp;<!--<a href="/consortia/"><font color="#0099CC">Consortia</font></a>&nbsp;|&nbsp;--><a href="/"><font color="#0099CC">Home</font></a></b>
+<br><br>Use of this site is subject to certain <a href="/agreement.html"><font color="#0099CC">Terms &amp; Conditions</font></a>, <a href="/copyright.html"><font color="#0099CC">Copyright &copy; 1996-2000 EarthWeb Inc.</font></a> All rights reserved.  Reproduction in whole or in part in any form or medium without express written <a href="http://www.earthweb.com/dlink.corp|permissions-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">permission</font></a> of EarthWeb is prohibited. Read EarthWeb's <A HREF="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">privacy</font></A> statement.</font><br><br>
+</td>
+</tr>
+</table>
+
+<a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html"><img src="/images/dotclear.gif" border="0" height="1" width="1" align="left"></a>
+</td>
+		</tr>
+</table>
+
+<!--DoubleClick Ad BEGIN-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<layer src="http://ad.doubleclick.net/adl/academic.itknowledge.com/homepage;cat=homepage;cat=enterprise;cat=education;cat=it_training;ord=' + ord + '" width="468" height="60" visibility="hide" onload="moveToAbsolute(ph1.pageX, ph1.pageY); visibility=\'show\';" clip="468,60"></layer>');
+document.write('<LAYER SRC="http://ad.doubleclick.net/adl/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width=160 height=60 visibility="hidden" onLoad="moveToAbsolute(layer1.pageX,layer1.pageY);clip.height=60;clip.width=160; visibility=\'show\';"></LAYER>');//--></SCRIPT><!--DoubleClick Ad END--></BODY></HTML>
+
+<!-- END FOOTER -->
+

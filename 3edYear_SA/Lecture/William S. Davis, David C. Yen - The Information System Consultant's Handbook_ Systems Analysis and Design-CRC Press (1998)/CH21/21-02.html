@@ -1,0 +1,565 @@
+<HTML>
+<HEAD>
+<META name=vsisbn content="0849370019">
+<META name=vstitle content="The Information System Consultant's Handbook: Systems Analysis and Design">
+<META name=vsauthor content="William S. Davis, David C. Yen">
+<META name=vsimprint content="CRC Press">
+<META name=vspublisher content="CRC Press LLC">
+<META name=vspubdate content="12/28/98">
+<META name=vscategory content="Business and IT Management: Consulting,Networking and Telecommunications: Network Design,Networking and Telecommunications: System Management">
+
+
+
+
+
+<TITLE>The Information System Consultant's Handbook: Systems Analysis and Design:Project networks, PERT, and CPM</TITLE>
+
+<!-- HEADER -->
+
+<STYLE type="text/css"> 
+ <!--
+ A:hover  {
+ 	color : Red;
+ }
+ -->
+</STYLE>
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<script>
+<!--
+function displayWindow(url, width, height) {
+         var Win = window.open(url,"displayWindow",'width=' + width +',height=' + height + ',resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</script>
+<SCRIPT>
+<!--
+function popUp(url) {
+        var Win = window.open(url,"displayWindow",'width=400,height=300,resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</SCRIPT>
+
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var axel = Math.random() + "";
+var ord = axel * 1000000000000000000 + "?";
+
+//This part of script alleviates a Netscape document.write bug
+<!-- 
+NS4 = document.layers;
+if (NS4) {
+origWidth = innerWidth;
+origHeight = innerHeight;
+}
+function reDo() {
+if (innerWidth != origWidth || innerHeight != origHeight) 
+location.reload();
+}
+if (NS4) onresize = reDo;
+//-->
+</SCRIPT>
+
+</HEAD>
+
+<body background="/images/back.jpg" bgcolor="#FFFFFF" link="#003399" alink="#FF0000" vlink="#003399" topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
+
+<table bgcolor="#003366" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="3">
+		
+		<table width="100%">
+			<tr valign="top">
+				<td bgcolor="#003366">&nbsp;&nbsp;<a href="http://www.earthweb.com" target="resource window"><img src="/images/ew_logo.jpg" width="82" height="58"  alt="EarthWeb" border="0"></a>&nbsp;&nbsp;&nbsp;</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" border="0"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ilayer id="ph1" visibility="hide" width="468" height="60"></ilayer>');
+//-->
+</SCRIPT> 
+
+<!-- <noscript>
+<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456?">
+<IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456? width="468" height="60" border="0"></A>
+</noscript> -->
+				</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="javascript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width="160" height="60" frameborder="no" border="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" border=0 height="60" width="160"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ILAYER id="layer1" visibility="hidden" width=160 height=60></ILAYER>');
+//-->
+</SCRIPT></td>
+<td><a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html">
+<img src="/images/dotblue.gif" border="0" height="1" width="1" align="right"></a></td>
+			</tr>
+		</table>
+		
+		</td>
+	</tr>
+		<tr>
+		<td height="1" colspan="3" bgcolor="#003366"><img src="/images/dotclear.gif" border=0 alt=""></td>
+	</tr>
+	
+</table>
+
+<!-- END HEADER -->
+
+
+<!-- BEGIN SUB HEADER -->
+
+<table bgcolor="#003366" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+<!-- ITK TOPNAV -->
+	
+	<tr>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_off.gif" alt="Home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search.gif" alt="Search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq.gif" alt="FAQ" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap.gif" alt="Sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us.gif" alt="Contact Us" border="0"></a></td> 
+	</tr>
+	
+<!-- END of ITK TOPNAV -->
+
+<!-- ITK LOGO and newsletter sign up -->
+
+</table>
+	
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+
+	<tr>
+		<td align="left" valign="top" nowrap><img src="/images/itk_logo_sm.jpg" alt="" border="0"></td>
+		<td align="right"><font face="verdana, sans-serif" size="1">
+
+<script language="JavaScript">
+<!-- 
+
+var days = new Array(8);
+days[1] = "Sunday";
+days[2] = "Monday";
+days[3] = "Tuesday";
+days[4] = "Wednesday";
+days[5] = "Thursday";
+days[6] = "Friday";
+days[7] = "Saturday";
+
+var months = new Array(13);
+months[1] = "January";
+months[2] = "February";
+months[3] = "March";
+months[4] = "April";
+months[5] = "May";
+months[6] = "June";
+months[7] = "July";
+months[8] = "August";
+months[9] = "September";
+months[10] = "October";
+months[11] = "November";
+months[12] = "December";
+
+var dateObj = new Date()
+var wday = days[dateObj.getDay() + 1]
+var lmonth = months[dateObj.getMonth() + 1]
+var date = dateObj.getDate()
+var fyear = dateObj.getYear()
+if (fyear <1000) fyear += 1900;
+document.write(wday + ", " + lmonth + " " + date + ", " + fyear)
+                
+//-->
+</script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<br><br>
+
+<!-- <img src="/images/enterprise_logo.gif" width="254" height="51" border="0"> --></td>
+	</tr>
+</table>
+
+<!-- END ITK LOGO and newsletter sign up-->
+	
+<!-- begin of ITK left NAV -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+	<table border="0" cellpadding="0" cellspacing="0">
+	
+	
+		<tr>
+		<td width="145" valign="top" align="left" rowspan=8>
+		
+	<!-- KEYWORD SEARCH -->	
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+	
+<form name="keyword" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewkwk2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/keyword_searcha.gif" vspace="5" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vsisbn vspublisher vspubdate">		
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+		<table width="145" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="145">&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="" checked><font face="arial, helvetica" size="1" color="#FFFFFF">All ITKnowledge</FONT><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="sourcecode"><font face="arial, helvetica" size="1" color="#FFFFFF">Source Code</FONT><br>
+
+			<font face="arial, helvetica" size="2">
+			<img src="/images/dotclear.gif" width="1" height="5" alt="" border="0"><br>
+			
+			&nbsp;&nbsp;<a href="/search/search-tips.html"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Search Tips</font></a><br>
+			&nbsp;&nbsp;<a href="/search/"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Advanced Search</font></a><br>
+			
+			</font>
+			
+		</td>
+		<td width="5"><img src="/images/dotclear.gif" width=5 height=10 hspace="5" alt="" border="0"></td>
+		</tr>
+		</table>
+	</form>
+		
+		
+<!-- BROWSE BY TOPIC -->
+		
+
+<form name="meta" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewmetak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/publication_searcha.gif" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="allbooks_p2">
+<INPUT type="hidden" name="altcoll" value="corpitk_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vspublisher vspubdate">
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+<table width="145" border="0" cellpadding="0" cellspacing="0">
+	
+			<tr>
+			<td valign="top">
+			&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br><font face="arial, helvetica" size="2">
+			&nbsp;&nbsp;<SELECT NAME="metatags" style="font-size: 12; font-family: sans-serif;" size="1">
+			<option value="vstitle" SELECTED>Title
+			<option value="vsauthor">Author
+			<option value="vspublisher">Publisher
+			<option value="vsisbn">ISBN			
+			</SELECT><br><br></font>
+			</td>
+			</tr>
+</table>
+</form>
+
+<form action="" name="catlist">	
+<table width="145" border="0" cellpadding="0" cellspacing="0">				
+			<tr>
+			<td valign="top">
+			<img src="/images/jump_topica.gif" width="145" alt="" border="0">
+			</td>
+			</tr>
+			<tr>
+			<td width="145">
+				
+	        	<font face="Arial,helvetica" size="1">
+				&nbsp;&nbsp;<SELECT NAME="cat" onChange='top.location.href=this.options[selectedIndex].value;' style="font-size: 10; font-family: sans-serif;">
+                        <option value="" selected>Please Select
+                        <option value="">-----------
+						<option value="/reference/dir.1-busman.html">Business &amp; IT Mgmt
+						<option value="/reference/dir.2-certification.html">Certification &amp; Training                       
+						<option value="/reference/dir.3-databaseanderp.html">Database &amp; ERP
+                        <option value="/reference/dir.4-desktopapps.html">Desktop Apps
+                        <option value="/reference/dir.5-desktoppubanddesign.html">Graphic Design
+                        <option value="/reference/dir.6-generalinternet.html">General Internet
+                        <option value="/reference/dir.7-hardwareandos.html">Hardware &amp; OS
+                        <option value="/reference/dir.8-ibmredbooks.html">IBM RedBooks
+                        <option value="/reference/dir.9-networktelcom.html">Network &amp; Telecom
+						<option value="/reference/dir.10-websoftwaredev.html">Web &amp; Software Dev
+						<option value="/reference/dir.11-careers.html">Careers
+                        <option value="">-----------
+                        <option value="/reference/whatsnew.html">New Arrivals
+                        </SELECT>
+						</font>
+			</td>
+			</tr>
+</table>
+</form>
+	
+<!-- LEFT NAV SEARCH END -->
+
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+<a href="/desktop/"><img src="/images/desktop_icona.gif" border=0 alt="Go to ITKnowledge Academic"></a><br><br></td>
+	</tr>
+</table>
+		
+<!-- BEGIN TEXT LINKS -->
+
+
+<!-- END TEXT LINKS -->
+
+<!-- END LEFT NAVBAR -->
+
+
+<!-- END LEFT NAVBAR -->
+	
+	<td width="15"><img src="/images/dotclear.gif" width="15" alt="" border="0"></td>
+
+<!-- end of ITK left NAV -->
+
+<!-- begin main content -->
+	
+	<td width="100%" valign="top" align="left">
+		<br>
+
+<!-- END SUB HEADER -->
+<!-- Created by dB Page Builder.  http://www.pchelponline.com/bluestem -->
+
+<!--Begin Content Column -->
+
+<TABLE border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width=75 valign=top>
+<img src="/images/sm_covers/0849370019.gif" width=60 height=73 alt="The Information System Consultant's Handbook: Systems Analysis and Design" border="1">
+</td>
+<td align="left">
+    <font face="arial, helvetica" size="-1" color="#336633"><b>The Information System Consultant's Handbook: Systems Analysis and Design</b></font>
+    <br>
+    <font face="arial, helvetica" size="-1"><i>by William S. Davis, David C. Yen</i>
+    <br>
+    CRC Press,&nbsp;CRC Press LLC
+    <br>
+    <b>ISBN:</b>&nbsp;0849370019<b>&nbsp;&nbsp;&nbsp;Pub Date:</b>&nbsp;12/28/98</font>&nbsp;&nbsp;<A HREF="http://www.digitalguru.com/dgstore/product.asp?isbn=0849370019&ac%5Fid=28" TARGET="anotherwindows"><img src="/images/buyit.gif" width=64 height=23 hspace="5" align="middle" alt="Buy It" border="0"></a>
+</td>
+</tr>
+</table>
+<P>
+<form name="advanced" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewintrak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="score desc">
+<INPUT name="fields" type=hidden value="vdkvgwkey score vstitle vsisbn vsauthor vspublisher vspubdate">
+<INPUT name="imageprefix" type=hidden value="http://academic.itknowledge.com">
+<INPUT name="ssiFolder" type=hidden value="itkaca">
+<INPUT name="topics" type=hidden value="itk_academic">
+<INPUT type="hidden" name="bookid" value="t_0849370019">
+
+<font face="arial, helvetica" size=2><b>Search this book:</b></font><br>
+<INPUT NAME="query" size=25 VALUE="">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle>
+
+</form>
+
+
+<!-- Empty Reference Subhead -->
+
+<!--ISBN=0849370019//-->
+<!--TITLE=The Information System Consultant's Handbook: Systems Analysis and Design//-->
+<!--AUTHOR=William S. Davis//-->
+<!--AUTHOR=David C. Yen//-->
+<!--AUTHOR=T. M. Rajkumar//-->
+<!--AUTHOR=Michael S. Broida//-->
+<!--AUTHOR=Timothy C. Krehbiel//-->
+<!--AUTHOR=Bruce L. Bowerman//-->
+<!--AUTHOR=Richard T. O'Connel//-->
+<!--AUTHOR=John "Skip" Benamati et al.//-->
+<!--PUBLISHER=CRC Press LLC//-->
+<!--CHAPTER=21//-->
+<!--PAGES=155-158//-->
+<!--UNASSIGNED1//-->
+<!--UNASSIGNED2//-->
+
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="21-01.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="../ch22/22-01.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+<P><BR></P>
+<P>An event occurs when <I>all</I> the activities that enter it are completed. That is why the <I>highest</I> computed EET is selected.</P>
+<P>In Figure 21.1 the earliest event times are shown at the upper right quadrant of each circle. For example, consider event 2. There is only one entering activity, 1-2. Activity 1-2&#146;s initial event is 1. Event 1&#146;s EET is 0 and activity 1-2&#146;s duration is 2 d, so the earliest event 2 can possibly occur is 2 d after the project begins.</P>
+<P>Next, consider event 10. It has two entering activities (6-10 and 9-10), so two computations are needed. Event 6&#146;s EET is 2 and activity 6-10&#146;s duration is 1 d, so the computed EET is 3 d. Event 9&#146;s EET is 10 and activity 9-10&#146;s duration is 1 d, so the second EET is 11 d. The highest computed EET for event 10 is 11 d, so record 11 at the top right of the bubble that represents event 10.</P>
+<H4 ALIGN="LEFT"><A NAME="Heading10"></A><FONT COLOR="#000077">21.4.5 The latest event time</FONT></H4>
+<P>The latest event time (LET) is the latest time an event can occur without impacting the project schedule. By convention, the LET of the last or terminal event is equal to its earliest event time, so 16 d is both the EET and the LET for event 16 (Figure 21.1). To compute the latest event time for all the other events, work from right to left and follow these three rules:
+</P>
+<DL>
+<DD><B>1.</B>&nbsp;&nbsp;Consider all activities that <I>leave</I> an event.
+<DD><B>2.</B>&nbsp;&nbsp;Subtract each activity&#146;s duration from the LET of its <I>terminal</I> event.
+<DD><B>3.</B>&nbsp;&nbsp;Select the <I>smallest</I> computed LET and record it in the lower right quadrant of the event circle.
+</DL>
+<P>For example, consider event 13. Three activities (13-14, 13-15, and 13-16) leave event 13. Event 14 has a latest event time of 15.5 d and activity 13-14 has a duration of 1 d, so event 13&#146;s first computed LET is 14.5 d. Event 15 has a latest event time of 15 and activity 13-15 has a duration of 0 d (it is a dummy activity), so the second candidate LET is 15 d. The computation for activity 13-16 yields 14 d. Because the smallest computed LET is 14 d, the latest event time for event 13 is 14 d.
+</P>
+<P>Why pick the <I>smallest</I> LET? The idea is to allow enough time for the most lengthy activity or series of activities. If event 13 actually occurs at time 15.5, event 14 cannot possibly occur before day 16.5 because activity 13-14 takes 1 full day to complete. That would impact the schedule.</P>
+<P>Next, consider event 12. Only one activity (12-13) leaves it. The LET for event 13 is 14 d and the duration of activity 12-13 is 1 d, so event 12&#146;s LET is 13 d.</P>
+<H4 ALIGN="LEFT"><A NAME="Heading11"></A><FONT COLOR="#000077">21.4.6 The critical path</FONT></H4>
+<P>Note that the earliest and latest event times are the same for several events (Figure 21.1). Those events define the critical path, which is marked by a heavy black line. If the project is to be completed on time, the critical events must begin on time and the critical activities must require no more than their estimated duration.
+</P>
+<H4 ALIGN="LEFT"><A NAME="Heading12"></A><FONT COLOR="#000077">21.4.7 Slack time</FONT></H4>
+<P>Activities not on the critical path can (to a point) start late or exceed their estimated duration without affecting the schedule. The extra time associated with an activity, called slack or float, is computed by subtracting from the latest event time of its <I>terminal</I> event both the activity&#146;s duration and the earliest event time of its <I>initial</I> event:</P>
+<TABLE WIDTH="100%"><TD ALIGN="CENTER">Total slack = (LET)<SUB><SMALL><I>t</I></SMALL></SUB> &#150; (EET)<SMALL><SUB><I>i</I></SUB></SMALL> &#150; duration.
+<TD ALIGN="RIGHT">(21.1)
+</TABLE>
+<P>Slack time is enclosed in parentheses and recorded below the activity arrow (Figure 21.1). Note that critical path slack times are all 0.
+</P>
+<P>For example, consider activity 6-10. The LET of its terminal event (10) is 11 d, the EET of its initial event (6) is 2 d, and its duration is 1 d. Plug those numbers into the equation and you get a slack time of 8 d.</P>
+<P>Slack represents the maximum time the activity can slip without affecting the project schedule. If an activity begins late, of course, its available slack is reduced.</P>
+<H4 ALIGN="LEFT"><A NAME="Heading13"></A><FONT COLOR="#000077">21.4.8 PERT and CPM</FONT></H4>
+<P>The project network is the foundation of both PERT and CPM.
+</P>
+<P>PERT gained prominence during the late 1950s when it proved invaluable in scheduling and controlling the Polaris missile program. It is particularly useful in research and development projects where the times to complete the various activities are uncertain. The critical path is the primary focus of management control, and monitoring the critical events provides an early warning if estimates are inaccurate.</P>
+<P>Industry developed CPM (Critical Path Method) to help solve scheduling problems when the activity times are known more precisely. Only by shortening the critical path can the project completion time be improved. Consequently, the critical path defines those activities into which additional resources might be poured to accelerate the schedule. An application of the critical path method to crash mode development is illustrated in Chapter 22.</P>
+<H3><A NAME="Heading14"></A><FONT COLOR="#000077">21.5 Key terms</FONT></H3>
+<DL>
+<DT><B>Activity &#151;</B>
+<DD> A task to be completed.
+<DT><B>CPM (Critical Path Method) &#151;</B>
+<DD> A project management technique based on a project network; the focus of CPM is project planning, with the critical path defining those activities into which additional resources might be poured to accelerate the schedule.
+<DT><B>Critical path &#151;</B>
+<DD> The path through a project network that links the critical events that must begin on time and the critical activities that must require no more than their estimated duration if the project is to be completed on time.
+<DT><B>Diverge &#151;</B>
+<DD> To split a single input path into multiple paths.
+<DT><B>Dummy activity &#151;</B>
+<DD> An activity that links parallel events, but consumes neither time nor resources.
+<DT><B>Duration &#151;</B>
+<DD> The elapsed time required to complete an activity.
+<DT><B>Earliest event time (EET) &#151;</B>
+<DD> The earliest time the event can possibly begin.
+<DT><B>Event &#151;</B>
+<DD> The beginning or end of an activity.
+<DT><B>Latest event time (LET) &#151;</B>
+<DD> The latest time an event can occur without impacting the project schedule.
+<DT><B>Merge &#151;</B>
+<DD> To combine two or more input paths into a single output path.
+<DT><B>PERT (Program Evaluation and Review Technique) &#151;</B>
+<DD> A project management technique based on a project network; with PERT, the critical path is the primary focus of management control and monitoring the critical events provides an early warning if estimates are inaccurate.
+<DT><B>Project network &#151;</B>
+<DD> A bubble chart that graphically depicts activities, their starting and completion times, and their interrelationships.
+<DT><B>Slack &#151;</B>
+<DD> The maximum time an activity can slip without affecting the project schedule.
+</DL>
+
+<H3><A NAME="Heading15"></A><FONT COLOR="#000077">21.6 Software</FONT></H3>
+<P>Such project management software products as Microsoft Project, Primavera Suretrack Project Manager, SuperProject from Computer Associates, Harvard Project Manager from Software Publishing Company, and Project Management Workbench from Applied Business Technology support project networks, PERT, CPM, and related techniques. Such charting or drawing tools as Visio and Flowcharter by Micrografx can be used to create a project network, although the project management tools are much more effective.
+</P>
+<H3><A NAME="Heading16"></A><FONT COLOR="#000077">21.7 References</FONT></H3>
+<DL>
+<DD><B>1.</B>&nbsp;&nbsp;Badiru, A. B. and Whitehouse, <I>Computer Tools, Models and Techniques for Project Management,</I> TAB Books, Blue Ridge Summit, PA, 1989.
+<DD><B>2.</B>&nbsp;&nbsp;Davis, W. S.,<I> Business Systems Analysis and Design, </I>Wadsworth, Belmont, CA, 1994.
+<DD><B>2a.</B>&nbsp;&nbsp;Humphrey, W. S., <I>Managing the Software Process,</I> Addison-Wesley, Reading, MA, 1989.
+<DD><B>3.</B>&nbsp;&nbsp;PERT Coord. Group, <I>PERT: Guide for Management Use, </I>U.S. Government Printing Office, publication number 0-6980452, Washington, D.C., 1963.
+<DD><B>4.</B>&nbsp;&nbsp;Roetzheim, W. H., <I>Structured Computer Project Management,</I> Prentice-Hall, Englewood Cliffs, NJ, 1988.
+<DD><B>5.</B>&nbsp;&nbsp;Weinberg, G. M. and Weinberg, D., <I>General Principles of Systems Design,</I> Dorset House, New York, 1988.
+</DL>
+<P><BR></P>
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="21-01.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="../ch22/22-01.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<hr width="90%" size="1" noshade>
+<div align="center">
+<font face="Verdana,sans-serif" size="1">Copyright &copy; <a href="/reference/crc00001.html">CRC Press LLC</a></font>
+</div>
+<!-- all of the reference materials (books) have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- BEGIN SUB FOOTER -->
+	<br>
+	<img src="/images/dotclear.gif" width="5" height="7" border="0">
+	</TD>
+    </TR>
+	</TABLE>
+	
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="left" width="160"><img src="/images/bot_curve.jpg" width="160" alt="" border="0"></td>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_bot.gif" alt="home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe_bot.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search_bot.gif" alt="search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq_bot.gif" alt="faq" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap_bot.gif" alt="sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us_bot.gif" alt="contactus" border="0"></a><img src="/images/dotclear.gif" width=260 height="1" alt="" border="0"></td> 
+	</tr>
+</table>
+
+	<table width="100%" bgcolor="#003366" border=0 cellpadding=0 cellspacing=0>
+		<tr>
+		<td align="left" width=145><img src="/images/dotclear.gif" width=145 height="1" alt="" border="0"></td>
+		
+		
+<!-- END SUB FOOTER -->
+
+<!-- all of the books have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- FOOTER -->
+			
+<td align="left" bgcolor="#003366">
+<table border="0" cellspacing="10" cellpadding="5">
+<tr>
+<td align="center">
+<font face="arial, helvetica" size="1" color="#cccccc"><b><a href="/products.html"><font color="#0099CC">Products</font></a>&nbsp;|&nbsp;<a href="/contactus.html"><font color="#0099CC">Contact Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|about_us-jhtml.72.0.-.0.jhtml" target="resource window"><font color="#0099CC">About Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">Privacy</font></a>&nbsp;|&nbsp;<a href="http://www.itmarketer.com/" target="resource window"><font color="#0099CC">Ad Info</font></a>&nbsp;|&nbsp;<!--<a href="/consortia/"><font color="#0099CC">Consortia</font></a>&nbsp;|&nbsp;--><a href="/"><font color="#0099CC">Home</font></a></b>
+<br><br>Use of this site is subject to certain <a href="/agreement.html"><font color="#0099CC">Terms &amp; Conditions</font></a>, <a href="/copyright.html"><font color="#0099CC">Copyright &copy; 1996-2000 EarthWeb Inc.</font></a> All rights reserved.  Reproduction in whole or in part in any form or medium without express written <a href="http://www.earthweb.com/dlink.corp|permissions-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">permission</font></a> of EarthWeb is prohibited. Read EarthWeb's <A HREF="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">privacy</font></A> statement.</font><br><br>
+</td>
+</tr>
+</table>
+
+<a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html"><img src="/images/dotclear.gif" border="0" height="1" width="1" align="left"></a>
+</td>
+		</tr>
+</table>
+
+<!--DoubleClick Ad BEGIN-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<layer src="http://ad.doubleclick.net/adl/academic.itknowledge.com/homepage;cat=homepage;cat=enterprise;cat=education;cat=it_training;ord=' + ord + '" width="468" height="60" visibility="hide" onload="moveToAbsolute(ph1.pageX, ph1.pageY); visibility=\'show\';" clip="468,60"></layer>');
+document.write('<LAYER SRC="http://ad.doubleclick.net/adl/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width=160 height=60 visibility="hidden" onLoad="moveToAbsolute(layer1.pageX,layer1.pageY);clip.height=60;clip.width=160; visibility=\'show\';"></LAYER>');//--></SCRIPT><!--DoubleClick Ad END--></BODY></HTML>
+
+<!-- END FOOTER -->
+

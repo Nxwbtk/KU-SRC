@@ -1,0 +1,573 @@
+<HTML>
+<HEAD>
+<META name=vsisbn content="0849370019">
+<META name=vstitle content="The Information System Consultant's Handbook: Systems Analysis and Design">
+<META name=vsauthor content="William S. Davis, David C. Yen">
+<META name=vsimprint content="CRC Press">
+<META name=vspublisher content="CRC Press LLC">
+<META name=vspubdate content="12/28/98">
+<META name=vscategory content="Business and IT Management: Consulting,Networking and Telecommunications: Network Design,Networking and Telecommunications: System Management">
+
+
+
+
+
+<TITLE>The Information System Consultant's Handbook: Systems Analysis and Design:Data structures</TITLE>
+
+<!-- HEADER -->
+
+<STYLE type="text/css"> 
+ <!--
+ A:hover  {
+ 	color : Red;
+ }
+ -->
+</STYLE>
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<script>
+<!--
+function displayWindow(url, width, height) {
+         var Win = window.open(url,"displayWindow",'width=' + width +',height=' + height + ',resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</script>
+<SCRIPT>
+<!--
+function popUp(url) {
+        var Win = window.open(url,"displayWindow",'width=400,height=300,resizable=1,scrollbars=yes');
+	if (Win) {
+		Win.focus();
+	}
+}
+//-->
+</SCRIPT>
+
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var axel = Math.random() + "";
+var ord = axel * 1000000000000000000 + "?";
+
+//This part of script alleviates a Netscape document.write bug
+<!-- 
+NS4 = document.layers;
+if (NS4) {
+origWidth = innerWidth;
+origHeight = innerHeight;
+}
+function reDo() {
+if (innerWidth != origWidth || innerHeight != origHeight) 
+location.reload();
+}
+if (NS4) onresize = reDo;
+//-->
+</SCRIPT>
+
+</HEAD>
+
+<body background="/images/back.jpg" bgcolor="#FFFFFF" link="#003399" alink="#FF0000" vlink="#003399" topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
+
+<table bgcolor="#003366" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="3">
+		
+		<table width="100%">
+			<tr valign="top">
+				<td bgcolor="#003366">&nbsp;&nbsp;<a href="http://www.earthweb.com" target="resource window"><img src="/images/ew_logo.jpg" width="82" height="58"  alt="EarthWeb" border="0"></a>&nbsp;&nbsp;&nbsp;</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;ord=' + ord + '" width="468" height="60" border="0"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ilayer id="ph1" visibility="hide" width="468" height="60"></ilayer>');
+//-->
+</SCRIPT> 
+
+<!-- <noscript>
+<A HREF="http://ad.doubleclick.net/jump/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456?">
+<IMG SRC="http://ad.doubleclick.net/ad/academic.itknowledge.com/other;cat=enterprise;sz=468x60;num=123456? width="468" height="60" border="0"></A>
+</noscript> -->
+				</td>
+				<td bgcolor="#003366" nowrap>
+<SCRIPT LANGUAGE="javascript">
+<!--
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width="160" height="60" frameborder="no" border="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" target="_top"><IMG SRC="http://ad.doubleclick.net/ad/itkaca.earthweb.dart/b_aca_hardware_sys;abr=!ie;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" border=0 height="60" width="160"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ILAYER id="layer1" visibility="hidden" width=160 height=60></ILAYER>');
+//-->
+</SCRIPT></td>
+<td><a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html">
+<img src="/images/dotblue.gif" border="0" height="1" width="1" align="right"></a></td>
+			</tr>
+		</table>
+		
+		</td>
+	</tr>
+		<tr>
+		<td height="1" colspan="3" bgcolor="#003366"><img src="/images/dotclear.gif" border=0 alt=""></td>
+	</tr>
+	
+</table>
+
+<!-- END HEADER -->
+
+
+<!-- BEGIN SUB HEADER -->
+
+<table bgcolor="#003366" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+<!-- ITK TOPNAV -->
+	
+	<tr>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_off.gif" alt="Home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search.gif" alt="Search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq.gif" alt="FAQ" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap.gif" alt="Sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us.gif" alt="Contact Us" border="0"></a></td> 
+	</tr>
+	
+<!-- END of ITK TOPNAV -->
+
+<!-- ITK LOGO and newsletter sign up -->
+
+</table>
+	
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+
+	<tr>
+		<td align="left" valign="top" nowrap><img src="/images/itk_logo_sm.jpg" alt="" border="0"></td>
+		<td align="right"><font face="verdana, sans-serif" size="1">
+
+<script language="JavaScript">
+<!-- 
+
+var days = new Array(8);
+days[1] = "Sunday";
+days[2] = "Monday";
+days[3] = "Tuesday";
+days[4] = "Wednesday";
+days[5] = "Thursday";
+days[6] = "Friday";
+days[7] = "Saturday";
+
+var months = new Array(13);
+months[1] = "January";
+months[2] = "February";
+months[3] = "March";
+months[4] = "April";
+months[5] = "May";
+months[6] = "June";
+months[7] = "July";
+months[8] = "August";
+months[9] = "September";
+months[10] = "October";
+months[11] = "November";
+months[12] = "December";
+
+var dateObj = new Date()
+var wday = days[dateObj.getDay() + 1]
+var lmonth = months[dateObj.getMonth() + 1]
+var date = dateObj.getDate()
+var fyear = dateObj.getYear()
+if (fyear <1000) fyear += 1900;
+document.write(wday + ", " + lmonth + " " + date + ", " + fyear)
+                
+//-->
+</script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<br><br>
+
+<!-- <img src="/images/enterprise_logo.gif" width="254" height="51" border="0"> --></td>
+	</tr>
+</table>
+
+<!-- END ITK LOGO and newsletter sign up-->
+	
+<!-- begin of ITK left NAV -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+<!-- BEGIN LEFT NAVBAR -->
+
+	<table border="0" cellpadding="0" cellspacing="0">
+	
+	
+		<tr>
+		<td width="145" valign="top" align="left" rowspan=8>
+		
+	<!-- KEYWORD SEARCH -->	
+<script language="JavaScript1.2">
+<!--
+function checkForQuery(fm) {
+  /* get the query value */
+  var i = escape(fm.query.value);
+  if (i == "") {
+      alert('Please enter a search word or phrase');
+      return false;
+  }                  /* query is blank, dont run the .jsp file */
+  else return true;  /* execute the .jsp file */
+}
+//-->
+</script>
+	
+<form name="keyword" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewkwk2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/keyword_searcha.gif" vspace="5" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vsisbn vspublisher vspubdate">		
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+		<table width="145" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="145">&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="" checked><font face="arial, helvetica" size="1" color="#FFFFFF">All ITKnowledge</FONT><br>
+&nbsp;&nbsp;<INPUT type="radio" name="scope" value="sourcecode"><font face="arial, helvetica" size="1" color="#FFFFFF">Source Code</FONT><br>
+
+			<font face="arial, helvetica" size="2">
+			<img src="/images/dotclear.gif" width="1" height="5" alt="" border="0"><br>
+			
+			&nbsp;&nbsp;<a href="/search/search-tips.html"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Search Tips</font></a><br>
+			&nbsp;&nbsp;<a href="/search/"><img src="/images/arrows_blue.gif" alt="" border="0"><font size="1" color="#ffffff">Advanced Search</font></a><br>
+			
+			</font>
+			
+		</td>
+		<td width="5"><img src="/images/dotclear.gif" width=5 height=10 hspace="5" alt="" border="0"></td>
+		</tr>
+		</table>
+	</form>
+		
+		
+<!-- BROWSE BY TOPIC -->
+		
+
+<form name="meta" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewmetak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<img src="/images/publication_searcha.gif" width="145" alt="" border="0">
+<INPUT type="hidden" name="collection" value="allbooks_p2">
+<INPUT type="hidden" name="altcoll" value="corpitk_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="vspubdate desc score desc">
+<INPUT name=fields type=hidden value="vdkvgwkey score vstitle vsauthor vspublisher vspubdate">
+<INPUT name=imageprefix type=hidden value="http://academic.itknowledge.com">
+<INPUT name=ssiFolder type=hidden value="itkaca">
+<INPUT name="topics" type="hidden" value="itk_academic">
+		
+<table width="145" border="0" cellpadding="0" cellspacing="0">
+	
+			<tr>
+			<td valign="top">
+			&nbsp;&nbsp;<input type="text" name="query" value="" size="11">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle><br><font face="arial, helvetica" size="2">
+			&nbsp;&nbsp;<SELECT NAME="metatags" style="font-size: 12; font-family: sans-serif;" size="1">
+			<option value="vstitle" SELECTED>Title
+			<option value="vsauthor">Author
+			<option value="vspublisher">Publisher
+			<option value="vsisbn">ISBN			
+			</SELECT><br><br></font>
+			</td>
+			</tr>
+</table>
+</form>
+
+<form action="" name="catlist">	
+<table width="145" border="0" cellpadding="0" cellspacing="0">				
+			<tr>
+			<td valign="top">
+			<img src="/images/jump_topica.gif" width="145" alt="" border="0">
+			</td>
+			</tr>
+			<tr>
+			<td width="145">
+				
+	        	<font face="Arial,helvetica" size="1">
+				&nbsp;&nbsp;<SELECT NAME="cat" onChange='top.location.href=this.options[selectedIndex].value;' style="font-size: 10; font-family: sans-serif;">
+                        <option value="" selected>Please Select
+                        <option value="">-----------
+						<option value="/reference/dir.1-busman.html">Business &amp; IT Mgmt
+						<option value="/reference/dir.2-certification.html">Certification &amp; Training                       
+						<option value="/reference/dir.3-databaseanderp.html">Database &amp; ERP
+                        <option value="/reference/dir.4-desktopapps.html">Desktop Apps
+                        <option value="/reference/dir.5-desktoppubanddesign.html">Graphic Design
+                        <option value="/reference/dir.6-generalinternet.html">General Internet
+                        <option value="/reference/dir.7-hardwareandos.html">Hardware &amp; OS
+                        <option value="/reference/dir.8-ibmredbooks.html">IBM RedBooks
+                        <option value="/reference/dir.9-networktelcom.html">Network &amp; Telecom
+						<option value="/reference/dir.10-websoftwaredev.html">Web &amp; Software Dev
+						<option value="/reference/dir.11-careers.html">Careers
+                        <option value="">-----------
+                        <option value="/reference/whatsnew.html">New Arrivals
+                        </SELECT>
+						</font>
+			</td>
+			</tr>
+</table>
+</form>
+	
+<!-- LEFT NAV SEARCH END -->
+
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+<a href="/desktop/"><img src="/images/desktop_icona.gif" border=0 alt="Go to ITKnowledge Academic"></a><br><br></td>
+	</tr>
+</table>
+		
+<!-- BEGIN TEXT LINKS -->
+
+
+<!-- END TEXT LINKS -->
+
+<!-- END LEFT NAVBAR -->
+
+
+<!-- END LEFT NAVBAR -->
+	
+	<td width="15"><img src="/images/dotclear.gif" width="15" alt="" border="0"></td>
+
+<!-- end of ITK left NAV -->
+
+<!-- begin main content -->
+	
+	<td width="100%" valign="top" align="left">
+		<br>
+
+<!-- END SUB HEADER -->
+<!-- Created by dB Page Builder.  http://www.pchelponline.com/bluestem -->
+
+<!--Begin Content Column -->
+
+<TABLE border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width=75 valign=top>
+<img src="/images/sm_covers/0849370019.gif" width=60 height=73 alt="The Information System Consultant's Handbook: Systems Analysis and Design" border="1">
+</td>
+<td align="left">
+    <font face="arial, helvetica" size="-1" color="#336633"><b>The Information System Consultant's Handbook: Systems Analysis and Design</b></font>
+    <br>
+    <font face="arial, helvetica" size="-1"><i>by William S. Davis, David C. Yen</i>
+    <br>
+    CRC Press,&nbsp;CRC Press LLC
+    <br>
+    <b>ISBN:</b>&nbsp;0849370019<b>&nbsp;&nbsp;&nbsp;Pub Date:</b>&nbsp;12/28/98</font>&nbsp;&nbsp;<A HREF="http://www.digitalguru.com/dgstore/product.asp?isbn=0849370019&ac%5Fid=28" TARGET="anotherwindows"><img src="/images/buyit.gif" width=64 height=23 hspace="5" align="middle" alt="Buy It" border="0"></a>
+</td>
+</tr>
+</table>
+<P>
+<form name="advanced" method="POST" action="http://ewsearch.earthweb.com:80/jsp/k2search/ewintrak2search_p2.jsp" onSubmit=" return checkForQuery(this); ">
+<INPUT type="hidden" name="collection" value="corpitk_p2">
+<INPUT type="hidden" name="altcoll" value="allbooks_p2">
+<INPUT type="hidden" name="hl" value="on">
+<INPUT name="sortspec" type=hidden value="score desc">
+<INPUT name="fields" type=hidden value="vdkvgwkey score vstitle vsisbn vsauthor vspublisher vspubdate">
+<INPUT name="imageprefix" type=hidden value="http://academic.itknowledge.com">
+<INPUT name="ssiFolder" type=hidden value="itkaca">
+<INPUT name="topics" type=hidden value="itk_academic">
+<INPUT type="hidden" name="bookid" value="t_0849370019">
+
+<font face="arial, helvetica" size=2><b>Search this book:</b></font><br>
+<INPUT NAME="query" size=25 VALUE="">&nbsp;<input type="image" width=28 height=23 border=0 value="Go" name="Go" src="/images/go.gif" align=absmiddle>
+
+</form>
+
+
+<!-- Empty Reference Subhead -->
+
+<!--ISBN=0849370019//-->
+<!--TITLE=The Information System Consultant's Handbook: Systems Analysis and Design//-->
+<!--AUTHOR=William S. Davis//-->
+<!--AUTHOR=David C. Yen//-->
+<!--AUTHOR=T. M. Rajkumar//-->
+<!--AUTHOR=Michael S. Broida//-->
+<!--AUTHOR=Timothy C. Krehbiel//-->
+<!--AUTHOR=Bruce L. Bowerman//-->
+<!--AUTHOR=Richard T. O'Connel//-->
+<!--AUTHOR=John "Skip" Benamati et al.//-->
+<!--PUBLISHER=CRC Press LLC//-->
+<!--CHAPTER=43//-->
+<!--PAGES=336-341//-->
+<!--UNASSIGNED1//-->
+<!--UNASSIGNED2//-->
+
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="43-01.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="../ch44/44-01.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+<P><BR></P>
+<P><FONT SIZE="+1"><B>43.4.4.4 B-trees, or balanced multi-way trees</B></FONT></P>
+<P>A B-tree, or balanced multi-way tree is a multi-way tree that has all its leaf nodes at the same level. Balance is achieved by building the tree from the bottom up. New entries are placed in a leaf node if possible. If the target leaf node is full, the leaf is split and the median value is moved up to the parent. B-trees are commonly used to index records on a secondary storage device without overflow.
+</P>
+<P><A NAME="Fig8"></A><A HREF="javascript:displayWindow('images/43-08.jpg',500,371 )"><IMG SRC="images/43-08t.jpg"></A>
+<BR><A HREF="javascript:displayWindow('images/43-08.jpg',500,371)"><FONT COLOR="#000077"><B>Figure 43.8</B></FONT></A>&nbsp;&nbsp;A binary tree.</P>
+<P><A NAME="Fig9"></A><A HREF="javascript:displayWindow('images/43-09.jpg',500,357 )"><IMG SRC="images/43-09t.jpg"></A>
+<BR><A HREF="javascript:displayWindow('images/43-09.jpg',500,357)"><FONT COLOR="#000077"><B>Figure 43.9</B></FONT></A>&nbsp;&nbsp;A multi-way tree.</P>
+<P><A NAME="Fig10"></A><A HREF="javascript:displayWindow('images/43-10.jpg',500,267 )"><IMG SRC="images/43-10t.jpg"></A>
+<BR><A HREF="javascript:displayWindow('images/43-10.jpg',500,267)"><FONT COLOR="#000077"><B>Figure 43.10</B></FONT></A>&nbsp;&nbsp;An undirected graph.</P>
+<H4 ALIGN="LEFT"><A NAME="Heading10"></A><FONT COLOR="#000077">43.4.5 Graphs and networks</FONT></H4>
+<P>In a tree, the nodes form a hierarchy. Graphs and networks are less restrictive.
+</P>
+<P>A graph is a set of nodes (or vertexes) linked by a set of edges. The edges on an undirected graph have no direction (Figure 43.10); in other words, it is possible to move between two nodes in any direction as long as they are connected by an edge.</P>
+<P>On a directed graph, or digraph, each edge (or arc) has a direction (Figure 43.11). A given node&#146;s indegree is the number of entering arcs, and its outdegree is the number of exiting arcs. A source is a node of indegree 0, and a sink is a node of outdegree 0.</P>
+<P>A path is a sequence of edges that links a set of nodes; on a digraph, the path&#146;s direction is significant. A cycle is a path that leads from a node back to the same node. In many operating systems, the set of requests for resources is modeled as a graph, and the graph is evaluated for cycles, which imply deadlock.</P>
+<P><A NAME="Fig11"></A><A HREF="javascript:displayWindow('images/43-11.jpg',436,387 )"><IMG SRC="images/43-11t.jpg"></A>
+<BR><A HREF="javascript:displayWindow('images/43-11.jpg',436,387)"><FONT COLOR="#000077"><B>Figure 43.11</B></FONT></A>&nbsp;&nbsp;A directed graph.</P>
+<P>On a network, or weighted graph, the edges have values. For example, a communication network might be modeled as a weighted graph with such values as Baud rate, distance, or cost associated with each edge.
+</P>
+<P>The process of traversing a graph or network involves identifying subtrees or spanning trees within the graph, and then working with the subtrees. A minimum spanning tree is a subtree or spanning tree for which the sum of arc weights is minimal. For example, a project network (Chapter 21) is a network and the critical path is a minimum spanning tree.</P>
+<H3><A NAME="Heading11"></A><FONT COLOR="#000077">43.5 Key terms</FONT></H3>
+<P><B>Access vector &#151;</B> A list of pointers providing access to a set of data items.</P>
+<P><B>Algorithm &#151;</B> A rule for arriving at an answer in a finite number of steps.</P>
+<P><B>Ancestor &#151;</B> A parent of a parent (or an ancestor).</P>
+<P><B>Arc</B> <B>&#151;</B> An edge on a directed graph.</P>
+<P><B>Array &#151;</B> An elementary data structure that resembles a table; typically, one data element is stored in each array cell and the cells are distinguished by subscripts.</P>
+<P><B>Attribute &#151;</B> A property of an entity.</P>
+<P><B>Binary tree &#151;</B> A special type of tree in which each node has two branches.</P>
+<P><B>Branch &#151;</B> On a tree, a link between a parent and a child.</P>
+<P><B>Child &#151;</B> An immediate lower-level node in a tree.</P>
+<P><B>Circular linked list &#151;</B> A linked list in which the last node points back to the first node.</P>
+<P><B>Cycle &#151;</B> On a graph, a path that leads from a node back to the same node.</P>
+<P><B>Data element &#151;</B> An attribute that cannot be logically decomposed; the most basic unit of data that has logical meaning.</P>
+<P><B>Data structure &#151;</B> A way of organizing data that considers both the data items and their relationships to each other.</P>
+<P><B>Descendant &#151;</B> A child of a child (or a descendant). <P><B>Directed graph</B> (<B>digraph</B>)<B> &#151;</B> A graph on which each edge (or arc) has a direction.</P>
+<P><B>Doubly linked list &#151;</B> A linked list in which each node contains both forward and backward pointers.</P>
+<P><B>Edge &#151;</B> On a graph, a link between two nodes.</P>
+<P><B>Entity &#151;</B> An object (a person, group, place, thing, or activity) about which data are stored.</P>
+<P><B>Field &#151;</B> A data element physically stored on some medium.</P>
+<P><B>File &#151;</B> A set of related records.</P>
+<P><B>Graph &#151;</B> A set of nodes (or vertexes) linked by a set of edges.</P>
+<P><B>Indegree &#151;</B> On a directed graph, the number of arcs entering a given node.</P>
+<P><B>Key &#151;</B> The attribute or group of attributes that uniquely distinguishes one occurrence of an entity.</P>
+<P><B>Leaf</B> (<B>leaf node</B>) &#151; On a tree, a node with no branches.</P>
+<P><B>Linked list &#151;</B> A list in which each node contains data plus a pointer to the next node.</P>
+<P><B>List &#151;</B> A series of nodes each of which holds a single data item; the most basic data structure.</P>
+<P><B>Matrix &#151;</B> A two-dimensional array.</P>
+<P><B>Minimum spanning tree &#151;</B> Within a graph, a subtree or spanning tree for which the sum of arc weights is minimal.</P>
+<P><B>Multi-linked list &#151;</B> A linked list in which each node contains two or more pointers, thus providing access to two or more other nodes.</P>
+<P><B>Multi-way tree &#151;</B> A tree in which each node holds <I>n</I> (two or more) values and can have (<I>n</I> &#43; 1) branches.</P>
+<P><B>Network</B> (<B>weighted graph</B>) &#151; A graph on which the edges have values.</P>
+<P><B>Node &#151;</B> An entry in a list; often, a single data element or a single record.</P>
+<P><B>Occurrence &#151;</B> A single instance of an entity.</P>
+<P><B>Ordered list &#151;</B> A list in which the nodes are stored in data value or key order.</P>
+<P><B>Outdegree &#151;</B> On a directed graph, the number of arcs exiting from a given node.</P>
+<P><B>Parent &#151;</B> The immediate higher-level node in a tree.</P>
+<P><B>Path &#151;</B> On a graph, a sequence of edges that links a set of nodes; on a digraph, the path&#146;s direction is significant.</P>
+<P><B>Pointer &#151;</B> A link to a data item; typically, a key value or an address.</P>
+<P><B>Pop &#151;</B> To remove an entry from the top of a stack.</P>
+<P><B>Push &#151;</B> To add an entry to the top of a stack.</P>
+<P><B>Queue &#151;</B> A special type of linked list in which insertions occur at the rear and deletions occur at the front.</P>
+<P><B>Record &#151;</B> The set of fields associated with an occurrence of an entity.</P>
+<P><B>Recursion &#151;</B> A subroutine calling itself; a subroutine initiating a circular chain of calls that returns eventually to itself.</P>
+<P><B>Root (root node) &#151;</B> A tree&#146;s top (or base) node.</P>
+<P><B>Siblings &#151;</B> Two or more nodes that share the same level.</P>
+<P><B>Singly linked list &#151;</B> A linked list in which each node points only to the next node.</P>
+<P><B>Sink &#151;</B> On a directed graph, a node of outdegree 0. <P><B>Source &#151;</B> On a directed graph, a node of indegree 0.</P>
+<P><B>Stack &#151;</B> A special type of linked list in which all insertions and deletions occur at the top.</P>
+<P><B>Subtree</B> (<B>spanning tree</B>)<B> &#151;</B> A tree within a graph; a subset of a tree that is itself a tree.</P>
+<P><B>Tree &#151;</B> A two-dimensional, hierarchical data structure; a tree can be defined recursively because each node is the root node of a subtree.</P>
+<P><B>Undirected graph &#151;</B> A graph on which the edges have no direction.</P>
+<P><B>Vector &#151;</B> A one-dimensional array.</P>
+<H3><A NAME="Heading12"></A><FONT COLOR="#000077">43.6 Software</FONT></H3>
+<P>Not applicable.
+</P>
+<H3><A NAME="Heading13"></A><FONT COLOR="#000077">43.7 References</FONT></H3>
+<DL>
+<DD><B>1.</B>&nbsp;&nbsp;Bamford, C. and Curran, P., <I>Data Structures, Files and Databases</I>, MacMillan Education, London, 1987
+<DD><B>2.</B>&nbsp;&nbsp;Horowitz, E. and Sahni, S., <I>Fundamentals of Data Structures in Pascal</I>, Computer Science Press, Rockville, MD, 1984.
+<DD><B>3.</B>&nbsp;&nbsp;Knuth, D. E., <I>The Art of Computer Programming,</I> vol. 1. <I>Fundamental Algorithms</I>, 2nd. ed., Addison-Wesley, Reading, MA, 1973.
+<DD><B>4.</B>&nbsp;&nbsp;Singh, B. and Naps, T. L., <I>Introduction to Data Structures</I>, West Publishing, Minneapolis/St. Paul, MN, 1985.
+</DL>
+<P><BR></P>
+<CENTER>
+<TABLE BORDER>
+<TR>
+<TD><A HREF="43-01.html">Previous</A></TD>
+<TD><A HREF="../ewtoc.html">Table of Contents</A></TD>
+<TD><A HREF="../ch44/44-01.html">Next</A></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<hr width="90%" size="1" noshade>
+<div align="center">
+<font face="Verdana,sans-serif" size="1">Copyright &copy; <a href="/reference/crc00001.html">CRC Press LLC</a></font>
+</div>
+<!-- all of the reference materials (books) have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- BEGIN SUB FOOTER -->
+	<br>
+	<img src="/images/dotclear.gif" width="5" height="7" border="0">
+	</TD>
+    </TR>
+	</TABLE>
+	
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="left" width="160"><img src="/images/bot_curve.jpg" width="160" alt="" border="0"></td>
+		<td align="left" valign="top" nowrap><a href="/"><img src="/images/top_tabs/home_bot.gif" alt="home" border="0"></a><!-- <a href="/content/corp.html"><img src="/images/top_tabs/subscribe_bot.gif" alt="Subscribe" border="0"></a> --><a href="/search/"><img src="/images/top_tabs/search_bot.gif" alt="search" border="0"></a><a href="/faq/faq.html"><img src="/images/top_tabs/faq_bot.gif" alt="faq" border="0"></a><a href="/sitemap.html"><img src="/images/top_tabs/sitemap_bot.gif" alt="sitemap" border="0"></a><a href="/contactus.html"><img src="/images/top_tabs/contact_us_bot.gif" alt="contactus" border="0"></a><img src="/images/dotclear.gif" width=260 height="1" alt="" border="0"></td> 
+	</tr>
+</table>
+
+	<table width="100%" bgcolor="#003366" border=0 cellpadding=0 cellspacing=0>
+		<tr>
+		<td align="left" width=145><img src="/images/dotclear.gif" width=145 height="1" alt="" border="0"></td>
+		
+		
+<!-- END SUB FOOTER -->
+
+<!-- all of the books have the footer and subfoot reveresed -->
+<!-- reference_subfoot = footer -->
+<!-- reference_footer = subfoot -->
+
+<!-- FOOTER -->
+			
+<td align="left" bgcolor="#003366">
+<table border="0" cellspacing="10" cellpadding="5">
+<tr>
+<td align="center">
+<font face="arial, helvetica" size="1" color="#cccccc"><b><a href="/products.html"><font color="#0099CC">Products</font></a>&nbsp;|&nbsp;<a href="/contactus.html"><font color="#0099CC">Contact Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|about_us-jhtml.72.0.-.0.jhtml" target="resource window"><font color="#0099CC">About Us</font></a>&nbsp;|&nbsp;<a href="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">Privacy</font></a>&nbsp;|&nbsp;<a href="http://www.itmarketer.com/" target="resource window"><font color="#0099CC">Ad Info</font></a>&nbsp;|&nbsp;<!--<a href="/consortia/"><font color="#0099CC">Consortia</font></a>&nbsp;|&nbsp;--><a href="/"><font color="#0099CC">Home</font></a></b>
+<br><br>Use of this site is subject to certain <a href="/agreement.html"><font color="#0099CC">Terms &amp; Conditions</font></a>, <a href="/copyright.html"><font color="#0099CC">Copyright &copy; 1996-2000 EarthWeb Inc.</font></a> All rights reserved.  Reproduction in whole or in part in any form or medium without express written <a href="http://www.earthweb.com/dlink.corp|permissions-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">permission</font></a> of EarthWeb is prohibited. Read EarthWeb's <A HREF="http://www.earthweb.com/dlink.corp|privacy-jhtml.72.0.-.-.jhtml" target="resource window"><font color="#0099CC">privacy</font></A> statement.</font><br><br>
+</td>
+</tr>
+</table>
+
+<a href="AITK1a2b3c4d5e6f7g8h9idefcon4.html"><img src="/images/dotclear.gif" border="0" height="1" width="1" align="left"></a>
+</td>
+		</tr>
+</table>
+
+<!--DoubleClick Ad BEGIN-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<layer src="http://ad.doubleclick.net/adl/academic.itknowledge.com/homepage;cat=homepage;cat=enterprise;cat=education;cat=it_training;ord=' + ord + '" width="468" height="60" visibility="hide" onload="moveToAbsolute(ph1.pageX, ph1.pageY); visibility=\'show\';" clip="468,60"></layer>');
+document.write('<LAYER SRC="http://ad.doubleclick.net/adl/itkaca.earthweb.dart/b_aca_hardware_sys;a=b_aca_hardware_sys4;sz=160x60;ord=' + ord + '" width=160 height=60 visibility="hidden" onLoad="moveToAbsolute(layer1.pageX,layer1.pageY);clip.height=60;clip.width=160; visibility=\'show\';"></LAYER>');//--></SCRIPT><!--DoubleClick Ad END--></BODY></HTML>
+
+<!-- END FOOTER -->
+
