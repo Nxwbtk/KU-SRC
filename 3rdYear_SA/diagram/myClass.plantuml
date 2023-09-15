@@ -1,0 +1,5 @@
+@startuml myclass
+
+A --|> B : Hello
+
+@enduml
